@@ -1,12 +1,5 @@
 import React, {useRef, useState, useEffect} from 'react';
-import {
-  Animated,
-  Text,
-  TouchableOpacity,
-  Keyboard,
-  Dimensions,
-  StyleSheet,
-} from 'react-native';
+import {Animated, Keyboard, Dimensions, StyleSheet} from 'react-native';
 import {Theme} from '../../../contants';
 import FaceId from '../Welcome/FaceId';
 import Form from './Form';
@@ -37,7 +30,7 @@ const LoginScreen = () => {
     };
   }, []);
 
-  const _keyboardDidShow = () => {
+  let _keyboardDidShow = () => {
     if (isRunAnimate) {
       Animated.timing(animation, {
         toValue: -200,
@@ -47,7 +40,7 @@ const LoginScreen = () => {
     }
   };
 
-  const _keyboardDidHide = () => {
+  let _keyboardDidHide = () => {
     if (isRunAnimate) {
       Animated.timing(animation, {
         toValue: 0,
@@ -58,8 +51,8 @@ const LoginScreen = () => {
   };
 
   const setModalVisible = () => {
-    modalizeRef.current?.open();
     setIsRunAnimate(false);
+    modalizeRef.current?.open();
   };
   return (
     <>

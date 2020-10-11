@@ -1,17 +1,17 @@
 import React from 'react';
-import {NavigationContainer, HeaderBackButton} from '@react-navigation/native';
+import {NavigationContainer} from '@react-navigation/native';
 import {
   createStackNavigator,
   CardStyleInterpolators,
 } from '@react-navigation/stack';
-import HomeScreen from '../Screens/Home';
+import {TouchableOpacity} from 'react-native';
+import {Icons, Theme} from '../../contants';
+import {SvgFromXml} from 'react-native-svg';
+import TabStack from './TabStack';
 import SplashScreen from '../Screens/Splash';
 import WelcomeScreen from '../Screens/Welcome';
 import RegisterScreen from '../Screens/Register';
 import LoginScreen from '../Screens/Login';
-import {TouchableOpacity} from 'react-native';
-import {Icons, Theme} from '../../contants';
-import {SvgFromXml} from 'react-native-svg';
 
 const App = createStackNavigator();
 
@@ -20,8 +20,7 @@ const AppStack = () => {
     <NavigationContainer>
       <App.Navigator
         screenOptions={{
-          gestureEnabled: true,
-          gestureDirection: 'horizontal',
+          gestureEnabled: false,
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
           headerShown: false,
           headerTransparent: true,
@@ -31,8 +30,8 @@ const AppStack = () => {
           },
           headerLeft: (props) => _renderHeaderLeft(props),
         }}
-        initialRouteName="Splash">
-        <App.Screen name="Home" component={HomeScreen} />
+        initialRouteName="Home">
+        <App.Screen name="Home" component={TabStack} />
         <App.Screen name="Splash" component={SplashScreen} />
         <App.Screen name="Welcome" component={WelcomeScreen} />
         <App.Screen
