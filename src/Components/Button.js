@@ -3,11 +3,12 @@ import {TouchableOpacity, StyleSheet} from 'react-native';
 import {Theme} from '../../contants';
 
 const Button = (props) => {
-  const {color, outline, full, children} = props;
+  const {color, outline, smallButton, full, children} = props;
   const buttonStyles = [
     styles.button,
     full && styles.full,
     color && styles[color],
+    smallButton && styles.miniButton,
     color && !styles[color] ? {backgroundColor: color} : null,
     outline && styles.outline,
   ];
@@ -24,6 +25,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 5,
     borderWidth: 1,
+  },
+  miniButton: {
+    height: 40,
   },
   full: {
     width: '100%',

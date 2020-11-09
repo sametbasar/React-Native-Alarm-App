@@ -1,6 +1,7 @@
 import React from 'react';
 import {StatusBar} from 'react-native';
 import Navigation from './src/Navigation/AppStack';
+import Providers from './src/Contexts/Providers';
 
 const App = () => {
   return (
@@ -10,7 +11,9 @@ const App = () => {
         backgroundColor="transparent"
         barStyle="dark-content"
       />
-      <Navigation />
+      <Providers>
+        <Navigation />
+      </Providers>
     </>
   );
 };

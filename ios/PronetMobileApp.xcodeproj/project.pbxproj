@@ -12,26 +12,26 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		18C10E52A18E49238EA8C7CE /* SFUIText-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C1EFBF4DADEF4A92BD1FD147 /* SFUIText-MediumItalic.ttf */; };
+		2520A8A26EA64C3A98ACBF2D /* SFUIText-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99B0EDB0E87F48679D62F872 /* SFUIText-Light.ttf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* PronetMobileAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PronetMobileAppTests.m */; };
-		4365A6EF9900D91E57E5A920 /* libPods-PronetMobileApp-PronetMobileAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C07DC83E93C0E7886C37AFB4 /* libPods-PronetMobileApp-PronetMobileAppTests.a */; };
-		61868B817989430C14D5FF08 /* libPods-PronetMobileApp-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9338AB2B669B6F5AF62B6F /* libPods-PronetMobileApp-tvOS.a */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		F430B1342E24476EC45568DA /* libPods-PronetMobileApp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE01C4BA7B578F0116C6B7F2 /* libPods-PronetMobileApp-tvOSTests.a */; };
-		7926BCB37B8B4523B8C04171 /* SFUIText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68390DB5B120450FBDB106C4 /* SFUIText-Bold.ttf */; };
-		E3BB5CE4F4AB4C8481BD33F5 /* SFUIText-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0E879EC26C84F98AFC9567E /* SFUIText-BoldItalic.ttf */; };
-		F2302E8B65164CEF98E598D4 /* SFUIText-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE221943779F45BC915BA05F /* SFUIText-Heavy.ttf */; };
-		66F902D0F35B4CF88C3636FC /* SFUIText-HeavyItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22A8AB359EAC4DDBA9499F31 /* SFUIText-HeavyItalic.ttf */; };
-		2520A8A26EA64C3A98ACBF2D /* SFUIText-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99B0EDB0E87F48679D62F872 /* SFUIText-Light.ttf */; };
-		55EC2D8CD7F843AF85AC92ED /* SFUIText-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E5540F605DB442B69D938BC6 /* SFUIText-LightItalic.ttf */; };
-		893FBA70BC9B47AA9F78F145 /* SFUIText-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B94E3309E99410D80F14CB4 /* SFUIText-Medium.ttf */; };
-		18C10E52A18E49238EA8C7CE /* SFUIText-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C1EFBF4DADEF4A92BD1FD147 /* SFUIText-MediumItalic.ttf */; };
-		7E8232F2A55146D29B13B992 /* SFUIText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E29640467B9346F295E0ECC9 /* SFUIText-Regular.ttf */; };
 		3CD68CDFD2444162A945E08E /* SFUIText-RegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34D5582B4B324A2A9A5B1710 /* SFUIText-RegularItalic.ttf */; };
-		F09FFAF8434C46EF94736B0E /* SFUIText-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 470CD467F06649BFAA140331 /* SFUIText-Semibold.ttf */; };
+		4365A6EF9900D91E57E5A920 /* libPods-PronetMobileApp-PronetMobileAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C07DC83E93C0E7886C37AFB4 /* libPods-PronetMobileApp-PronetMobileAppTests.a */; };
+		55EC2D8CD7F843AF85AC92ED /* SFUIText-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E5540F605DB442B69D938BC6 /* SFUIText-LightItalic.ttf */; };
+		61868B817989430C14D5FF08 /* libPods-PronetMobileApp-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9338AB2B669B6F5AF62B6F /* libPods-PronetMobileApp-tvOS.a */; };
+		66F902D0F35B4CF88C3636FC /* SFUIText-HeavyItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22A8AB359EAC4DDBA9499F31 /* SFUIText-HeavyItalic.ttf */; };
+		7926BCB37B8B4523B8C04171 /* SFUIText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68390DB5B120450FBDB106C4 /* SFUIText-Bold.ttf */; };
+		7E8232F2A55146D29B13B992 /* SFUIText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E29640467B9346F295E0ECC9 /* SFUIText-Regular.ttf */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		893FBA70BC9B47AA9F78F145 /* SFUIText-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B94E3309E99410D80F14CB4 /* SFUIText-Medium.ttf */; };
 		944A438F0F314B298D862100 /* SFUIText-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 898EC163935641F8910C4AC1 /* SFUIText-SemiboldItalic.ttf */; };
+		E3BB5CE4F4AB4C8481BD33F5 /* SFUIText-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0E879EC26C84F98AFC9567E /* SFUIText-BoldItalic.ttf */; };
+		F09FFAF8434C46EF94736B0E /* SFUIText-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 470CD467F06649BFAA140331 /* SFUIText-Semibold.ttf */; };
+		F2302E8B65164CEF98E598D4 /* SFUIText-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE221943779F45BC915BA05F /* SFUIText-Heavy.ttf */; };
+		F430B1342E24476EC45568DA /* libPods-PronetMobileApp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE01C4BA7B578F0116C6B7F2 /* libPods-PronetMobileApp-tvOSTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,33 +64,33 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = PronetMobileApp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PronetMobileApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = PronetMobileApp/main.m; sourceTree = "<group>"; };
+		22A8AB359EAC4DDBA9499F31 /* SFUIText-HeavyItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIText-HeavyItalic.ttf"; path = "../assets/fonts/SFUIText-HeavyItalic.ttf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* PronetMobileApp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PronetMobileApp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* PronetMobileApp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PronetMobileApp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DABAB0B8A0FA9C318A9B675 /* Pods-PronetMobileApp-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PronetMobileApp-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-PronetMobileApp-tvOSTests/Pods-PronetMobileApp-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2E62673137F8CFA9E61F0EB9 /* Pods-PronetMobileApp-PronetMobileAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PronetMobileApp-PronetMobileAppTests.debug.xcconfig"; path = "Target Support Files/Pods-PronetMobileApp-PronetMobileAppTests/Pods-PronetMobileApp-PronetMobileAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		33B0D910C64BCB1991FB7135 /* Pods-PronetMobileApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PronetMobileApp.debug.xcconfig"; path = "Target Support Files/Pods-PronetMobileApp/Pods-PronetMobileApp.debug.xcconfig"; sourceTree = "<group>"; };
+		34D5582B4B324A2A9A5B1710 /* SFUIText-RegularItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIText-RegularItalic.ttf"; path = "../assets/fonts/SFUIText-RegularItalic.ttf"; sourceTree = "<group>"; };
+		470CD467F06649BFAA140331 /* SFUIText-Semibold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIText-Semibold.ttf"; path = "../assets/fonts/SFUIText-Semibold.ttf"; sourceTree = "<group>"; };
+		68390DB5B120450FBDB106C4 /* SFUIText-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIText-Bold.ttf"; path = "../assets/fonts/SFUIText-Bold.ttf"; sourceTree = "<group>"; };
 		7E40F91A9A10F05862185348 /* Pods-PronetMobileApp-PronetMobileAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PronetMobileApp-PronetMobileAppTests.release.xcconfig"; path = "Target Support Files/Pods-PronetMobileApp-PronetMobileAppTests/Pods-PronetMobileApp-PronetMobileAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = PronetMobileApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		898EC163935641F8910C4AC1 /* SFUIText-SemiboldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIText-SemiboldItalic.ttf"; path = "../assets/fonts/SFUIText-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		8B94E3309E99410D80F14CB4 /* SFUIText-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIText-Medium.ttf"; path = "../assets/fonts/SFUIText-Medium.ttf"; sourceTree = "<group>"; };
 		8E05E848DE735C24FF3D4CB6 /* Pods-PronetMobileApp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PronetMobileApp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-PronetMobileApp-tvOSTests/Pods-PronetMobileApp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		8E8BA2A8F6674239240A67F5 /* Pods-PronetMobileApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PronetMobileApp.release.xcconfig"; path = "Target Support Files/Pods-PronetMobileApp/Pods-PronetMobileApp.release.xcconfig"; sourceTree = "<group>"; };
+		99B0EDB0E87F48679D62F872 /* SFUIText-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIText-Light.ttf"; path = "../assets/fonts/SFUIText-Light.ttf"; sourceTree = "<group>"; };
 		BE01C4BA7B578F0116C6B7F2 /* libPods-PronetMobileApp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PronetMobileApp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C07DC83E93C0E7886C37AFB4 /* libPods-PronetMobileApp-PronetMobileAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PronetMobileApp-PronetMobileAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0E879EC26C84F98AFC9567E /* SFUIText-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIText-BoldItalic.ttf"; path = "../assets/fonts/SFUIText-BoldItalic.ttf"; sourceTree = "<group>"; };
+		C1EFBF4DADEF4A92BD1FD147 /* SFUIText-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIText-MediumItalic.ttf"; path = "../assets/fonts/SFUIText-MediumItalic.ttf"; sourceTree = "<group>"; };
+		DE221943779F45BC915BA05F /* SFUIText-Heavy.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIText-Heavy.ttf"; path = "../assets/fonts/SFUIText-Heavy.ttf"; sourceTree = "<group>"; };
+		E29640467B9346F295E0ECC9 /* SFUIText-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIText-Regular.ttf"; path = "../assets/fonts/SFUIText-Regular.ttf"; sourceTree = "<group>"; };
+		E5540F605DB442B69D938BC6 /* SFUIText-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIText-LightItalic.ttf"; path = "../assets/fonts/SFUIText-LightItalic.ttf"; sourceTree = "<group>"; };
 		ECE4384AB0204DF4D1BF3313 /* libPods-PronetMobileApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PronetMobileApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F2B0ED46ED3A03C21808702B /* Pods-PronetMobileApp-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PronetMobileApp-tvOS.release.xcconfig"; path = "Target Support Files/Pods-PronetMobileApp-tvOS/Pods-PronetMobileApp-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		68390DB5B120450FBDB106C4 /* SFUIText-Bold.ttf */ = {isa = PBXFileReference; name = "SFUIText-Bold.ttf"; path = "../assets/fonts/SFUIText-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		C0E879EC26C84F98AFC9567E /* SFUIText-BoldItalic.ttf */ = {isa = PBXFileReference; name = "SFUIText-BoldItalic.ttf"; path = "../assets/fonts/SFUIText-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		DE221943779F45BC915BA05F /* SFUIText-Heavy.ttf */ = {isa = PBXFileReference; name = "SFUIText-Heavy.ttf"; path = "../assets/fonts/SFUIText-Heavy.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		22A8AB359EAC4DDBA9499F31 /* SFUIText-HeavyItalic.ttf */ = {isa = PBXFileReference; name = "SFUIText-HeavyItalic.ttf"; path = "../assets/fonts/SFUIText-HeavyItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		99B0EDB0E87F48679D62F872 /* SFUIText-Light.ttf */ = {isa = PBXFileReference; name = "SFUIText-Light.ttf"; path = "../assets/fonts/SFUIText-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E5540F605DB442B69D938BC6 /* SFUIText-LightItalic.ttf */ = {isa = PBXFileReference; name = "SFUIText-LightItalic.ttf"; path = "../assets/fonts/SFUIText-LightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8B94E3309E99410D80F14CB4 /* SFUIText-Medium.ttf */ = {isa = PBXFileReference; name = "SFUIText-Medium.ttf"; path = "../assets/fonts/SFUIText-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		C1EFBF4DADEF4A92BD1FD147 /* SFUIText-MediumItalic.ttf */ = {isa = PBXFileReference; name = "SFUIText-MediumItalic.ttf"; path = "../assets/fonts/SFUIText-MediumItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E29640467B9346F295E0ECC9 /* SFUIText-Regular.ttf */ = {isa = PBXFileReference; name = "SFUIText-Regular.ttf"; path = "../assets/fonts/SFUIText-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		34D5582B4B324A2A9A5B1710 /* SFUIText-RegularItalic.ttf */ = {isa = PBXFileReference; name = "SFUIText-RegularItalic.ttf"; path = "../assets/fonts/SFUIText-RegularItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		470CD467F06649BFAA140331 /* SFUIText-Semibold.ttf */ = {isa = PBXFileReference; name = "SFUIText-Semibold.ttf"; path = "../assets/fonts/SFUIText-Semibold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		898EC163935641F8910C4AC1 /* SFUIText-SemiboldItalic.ttf */ = {isa = PBXFileReference; name = "SFUIText-SemiboldItalic.ttf"; path = "../assets/fonts/SFUIText-SemiboldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +144,26 @@
 				00E356F11AD99517003FC87E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		119177480A7F48ABB9D6D557 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				68390DB5B120450FBDB106C4 /* SFUIText-Bold.ttf */,
+				C0E879EC26C84F98AFC9567E /* SFUIText-BoldItalic.ttf */,
+				DE221943779F45BC915BA05F /* SFUIText-Heavy.ttf */,
+				22A8AB359EAC4DDBA9499F31 /* SFUIText-HeavyItalic.ttf */,
+				99B0EDB0E87F48679D62F872 /* SFUIText-Light.ttf */,
+				E5540F605DB442B69D938BC6 /* SFUIText-LightItalic.ttf */,
+				8B94E3309E99410D80F14CB4 /* SFUIText-Medium.ttf */,
+				C1EFBF4DADEF4A92BD1FD147 /* SFUIText-MediumItalic.ttf */,
+				E29640467B9346F295E0ECC9 /* SFUIText-Regular.ttf */,
+				34D5582B4B324A2A9A5B1710 /* SFUIText-RegularItalic.ttf */,
+				470CD467F06649BFAA140331 /* SFUIText-Semibold.ttf */,
+				898EC163935641F8910C4AC1 /* SFUIText-SemiboldItalic.ttf */,
+			);
+			name = Resources;
+			path = "";
 			sourceTree = "<group>";
 		};
 		13B07FAE1A68108700A75B9A /* PronetMobileApp */ = {
@@ -222,26 +242,6 @@
 			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
-		};
-		119177480A7F48ABB9D6D557 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				68390DB5B120450FBDB106C4 /* SFUIText-Bold.ttf */,
-				C0E879EC26C84F98AFC9567E /* SFUIText-BoldItalic.ttf */,
-				DE221943779F45BC915BA05F /* SFUIText-Heavy.ttf */,
-				22A8AB359EAC4DDBA9499F31 /* SFUIText-HeavyItalic.ttf */,
-				99B0EDB0E87F48679D62F872 /* SFUIText-Light.ttf */,
-				E5540F605DB442B69D938BC6 /* SFUIText-LightItalic.ttf */,
-				8B94E3309E99410D80F14CB4 /* SFUIText-Medium.ttf */,
-				C1EFBF4DADEF4A92BD1FD147 /* SFUIText-MediumItalic.ttf */,
-				E29640467B9346F295E0ECC9 /* SFUIText-Regular.ttf */,
-				34D5582B4B324A2A9A5B1710 /* SFUIText-RegularItalic.ttf */,
-				470CD467F06649BFAA140331 /* SFUIText-Semibold.ttf */,
-				898EC163935641F8910C4AC1 /* SFUIText-SemiboldItalic.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -499,10 +499,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-PronetMobileApp-PronetMobileAppTests/Pods-PronetMobileApp-PronetMobileAppTests-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,10 +519,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-PronetMobileApp/Pods-PronetMobileApp-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

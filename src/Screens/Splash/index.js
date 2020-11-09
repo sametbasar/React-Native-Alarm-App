@@ -11,6 +11,7 @@ import {
   TouchableOpacity,
   SafeAreaView,
 } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useNavigation} from '@react-navigation/native';
 import {Icons, Theme} from '../../../contants';
 import SplashOne from './SplashOne';
@@ -38,6 +39,7 @@ const SplashScreen = () => {
   let [scroolX, setScroolX] = useState(new Animated.Value(0));
   const stepPosition = Animated.divide(scroolX, width);
   const navigation = useNavigation();
+  AsyncStorage.setItem('@SplashShow','false');
 
   _renderFlatList = (data, index) => {
     return <View key={index}>{data.item.render}</View>;

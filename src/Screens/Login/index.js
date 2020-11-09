@@ -1,5 +1,5 @@
-import React, {useRef, useState, useEffect} from 'react';
-import {Animated, Keyboard, Dimensions, StyleSheet} from 'react-native';
+import React, {useRef} from 'react';
+import {KeyboardAvoidingView, StyleSheet, View} from 'react-native';
 import {Theme} from '../../../contants';
 import FaceId from '../Welcome/FaceId';
 import Form from './Form';
@@ -7,60 +7,19 @@ import QuickLogin from './QuickLogin';
 import SmsValidation from './SmsValidation';
 import {Modalize} from 'react-native-modalize';
 
-const {width, height} = Dimensions.get('screen');
-
 const LoginScreen = () => {
-  const [isRunAnimate, setIsRunAnimate] = useState(true);
   const modalizeRef = useRef(null);
 
-  const animation = useRef(new Animated.Value(0)).current;
-
-  const animatedStyle = {
-    top: animation,
-  };
-
-  useEffect(() => {
-    Keyboard.addListener('keyboardDidShow', _keyboardDidShow);
-    Keyboard.addListener('keyboardDidHide', _keyboardDidHide);
-
-    // cleanup function
-    return () => {
-      Keyboard.removeListener('keyboardDidShow', _keyboardDidShow);
-      Keyboard.removeListener('keyboardDidHide', _keyboardDidHide);
-    };
-  }, []);
-
-  let _keyboardDidShow = () => {
-    if (isRunAnimate) {
-      Animated.timing(animation, {
-        toValue: -200,
-        duration: 300,
-        useNativeDriver: false,
-      }).start();
-    }
-  };
-
-  let _keyboardDidHide = () => {
-    if (isRunAnimate) {
-      Animated.timing(animation, {
-        toValue: 0,
-        duration: 300,
-        useNativeDriver: false,
-      }).start();
-    }
-  };
-
   const setModalVisible = () => {
-    setIsRunAnimate(false);
     modalizeRef.current?.open();
   };
   return (
     <>
-      <Animated.View style={[styles.container, animatedStyle]}>
+      <View style={styles.container}>
         <FaceId />
         <QuickLogin />
         <Form setModalVisible={setModalVisible} />
-      </Animated.View>
+      </View>
       <Modalize
         style={{backgroundColor: 'white'}}
         modalTopOffset={70}

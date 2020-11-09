@@ -12,8 +12,9 @@ import {Theme} from '../../contants';
 const {width, height} = Dimensions.get('screen');
 
 const Input = (props) => {
-  const {label, code, half, secure, keyboardType} = props;
-  const animateTop = useRef(new Animated.Value(20)).current;
+  const {label, code, half, textarea, secure, keyboardType} = props;
+  const animateStartValue = props.value?.length > 0 ? 5 : 20;
+  const animateTop = useRef(new Animated.Value(animateStartValue)).current;
 
   const labelAnimate = (value) => {
     Animated.timing(animateTop, {
@@ -41,7 +42,13 @@ const Input = (props) => {
         keyboardType={keyboardType}
         secureTextEntry={secure}
         onChange={inputChange}
-        style={[styles.input, code && styles.codeInput]}
+        multiline={textarea ? true : false}
+        numberOfLines={5}
+        style={[
+          styles.input,
+          code && styles.codeInput,
+          textarea && styles.textarea,
+        ]}
         {...props}
       />
     </View>
@@ -82,6 +89,10 @@ const styles = StyleSheet.create({
     paddingLeft: 0,
     paddingTop: 0,
     fontSize: Theme.sizes.h1,
+  },
+  textarea: {
+    height: 150,
+    paddingTop: 30,
   },
 });
 

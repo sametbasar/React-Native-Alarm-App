@@ -1,20 +1,116 @@
-import React from 'react';
-import {View, StyleSheet, Dimensions, Text} from 'react-native';
+import React, {useContext} from 'react';
+import {
+  View,
+  StyleSheet,
+  Dimensions,
+  Text,
+  Alert,
+  KeyboardAvoidingView,
+} from 'react-native';
+import {Formik} from 'formik';
 import {Theme} from '../../../contants';
+import {loginValidationSchema} from './LoginValidation';
 import {Button, Input} from '../../Components';
+import {LoginService} from '../../Enums/config';
+import ApiRepository from '../../Repository/Api';
+import {useNavigation} from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import AuthContext from '../../Contexts/AuthContext';
+import {ScrollView} from 'react-native-gesture-handler';
 
 const {width, height} = Dimensions.get('screen');
 
 const Form = ({setModalVisible}) => {
+  const navigation = useNavigation();
+  const auth = useContext(AuthContext);
+  const onSubmit = (
+    values,
+    {setSubmitting, setErrors, setStatus, resetForm},
+  ) => {
+    try {
+      const Api = new ApiRepository();
+      Api.post(LoginService, values).then(({data}) => {
+        if (data.Success) {
+          const {Data} = data;
+          auth.updateUser(Data);
+          AsyncStorage.setItem('AuthToken', Data.token);
+          navigation.navigate('Home');
+        } else {
+          Alert.alert('Üye Girişi', data.Message);
+        }
+        //setModalVisible(); Email İle Doğrulama...
+      });
+      resetForm({});
+      setStatus({success: true});
+    } catch (error) {
+      setStatus({success: false});
+      setSubmitting(true);
+      setErrors({submit: error.message});
+    }
+  };
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>CEP TELEFONU İLE GİRİŞ</Text>
-      <Input label="Telefon" keyboardType="number-pad" />
-      <View style={styles.action}>
-        <Button onPress={() => setModalVisible()} color="secondary" full>
-          <Text style={styles.textbtn}>Devam Et</Text>
-        </Button>
-      </View>
+      <ScrollView>
+        <KeyboardAvoidingView behavior="position">
+          <Text style={styles.title}>E-MAIL İLE GİRİŞ</Text>
+          <Formik
+            initialValues={{
+              email: '',
+              password: '',
+            }}
+            validationSchema={loginValidationSchema}
+            onSubmit={onSubmit}>
+            {({
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              values,
+              errors,
+              isValid,
+              touched,
+              isSubmitting,
+              i,
+            }) => (
+              <View style={{flexDirection: 'column', flex: 1}}>
+                <View style={styles.marginBottom}>
+                  <Input
+                    label="E-posta"
+                    keyboardType="email-address"
+                    autoCapitalize={'none'}
+                    value={values.email}
+                    name="email"
+                    onChangeText={handleChange('email')}
+                  />
+                  {touched.email && errors.email && (
+                    <Text style={{fontSize: 10, color: 'red'}}>
+                      {errors.email}
+                    </Text>
+                  )}
+                </View>
+                <View style={styles.marginBottom}>
+                  <Input
+                    label="Şifre"
+                    value={values.password}
+                    secureTextEntry
+                    onChangeText={handleChange('password')}
+                  />
+                  {touched.password && errors.password && (
+                    <Text style={{fontSize: 10, color: 'red'}}>
+                      {errors.password}
+                    </Text>
+                  )}
+                </View>
+                <View style={styles.action}>
+                  <Button onPress={handleSubmit} color="secondary" full>
+                    <Text style={styles.textbtn}>Devam Et</Text>
+                  </Button>
+                </View>
+              </View>
+            )}
+          </Formik>
+        </KeyboardAvoidingView>
+      </ScrollView>
     </View>
   );
 };

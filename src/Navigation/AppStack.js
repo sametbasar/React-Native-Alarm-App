@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState, useContext} from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {NavigationContainer} from '@react-navigation/native';
 import {
   createStackNavigator,
@@ -12,10 +13,47 @@ import SplashScreen from '../Screens/Splash';
 import WelcomeScreen from '../Screens/Welcome';
 import RegisterScreen from '../Screens/Register';
 import LoginScreen from '../Screens/Login';
+import Loading from '../Screens/Loading';
+import Api from './../Repository/Api';
+import {IsValidTokenService} from '../Enums/config';
+import AuthContext from '../Contexts/AuthContext';
+import ApiBase from '../Repository/ApiBase';
 
 const App = createStackNavigator();
 
 const AppStack = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [StartScreen, setStartScreen] = useState('Splash');
+  checkUserState(isLoading, setIsLoading, setStartScreen);
+  return isLoading ? Loading() : NavigationStack(StartScreen);
+};
+
+const checkUserState = async (isLoading, setIsLoading, setStartScreen) => {
+  const auth = useContext(AuthContext);
+  const splashStorage = await AsyncStorage.getItem('@SplashShow');
+  const authToken = await AsyncStorage.getItem('AuthToken');
+  const loading = isLoading;
+
+  if (authToken && loading) {
+    const api = new Api();
+    ApiBase.defaults.headers['authorization'] = authToken;
+    const {data} = await api.get(IsValidTokenService);
+    if (data.Success) {
+      auth.updateUser(data.Data);
+      setStartScreen('Home');
+    } else {
+      setStartScreen('Welcome');
+    }
+    setIsLoading(false);
+  } else if (splashStorage === 'false') {
+    setStartScreen('Welcome');
+  } else {
+    setStartScreen('Splash');
+  }
+  setIsLoading(false);
+};
+
+const NavigationStack = (StartScreen) => {
   return (
     <NavigationContainer>
       <App.Navigator
@@ -30,7 +68,7 @@ const AppStack = () => {
           },
           headerLeft: (props) => _renderHeaderLeft(props),
         }}
-        initialRouteName="Home">
+        initialRouteName={StartScreen}>
         <App.Screen name="Home" component={TabStack} />
         <App.Screen name="Splash" component={SplashScreen} />
         <App.Screen name="Welcome" component={WelcomeScreen} />
@@ -48,6 +86,7 @@ const AppStack = () => {
     </NavigationContainer>
   );
 };
+
 const _renderHeaderLeft = (props) => {
   return (
     <>
