@@ -13,7 +13,7 @@ const WelcomeScreen = () => {
       end={{x: 0, y: 0}}
       colors={['#f5ecd9', '#f4f7f9']}>
       <Logo />
-      <FaceId />
+      {/* <FaceId /> */}
       <Actions />
     </LinearGradient>
   );

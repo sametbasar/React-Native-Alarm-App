@@ -1,5 +1,5 @@
 import React from 'react';
-import {StatusBar} from 'react-native';
+import {StatusBar, View} from 'react-native';
 import Navigation from './src/Navigation/AppStack';
 import Providers from './src/Contexts/Providers';
 

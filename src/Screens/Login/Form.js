@@ -1,12 +1,5 @@
 import React, {useContext} from 'react';
-import {
-  View,
-  StyleSheet,
-  Dimensions,
-  Text,
-  Alert,
-  KeyboardAvoidingView,
-} from 'react-native';
+import {View, StyleSheet, Dimensions, Text, Alert} from 'react-native';
 import {Formik} from 'formik';
 import {Theme} from '../../../contants';
 import {loginValidationSchema} from './LoginValidation';
@@ -17,6 +10,7 @@ import {useNavigation} from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import AuthContext from '../../Contexts/AuthContext';
 import {ScrollView} from 'react-native-gesture-handler';
+import Spinner from 'react-native-spinkit';
 
 const {width, height} = Dimensions.get('screen');
 
@@ -40,7 +34,6 @@ const Form = ({setModalVisible}) => {
         }
         //setModalVisible(); Email İle Doğrulama...
       });
-      resetForm({});
       setStatus({success: true});
     } catch (error) {
       setStatus({success: false});
@@ -52,64 +45,71 @@ const Form = ({setModalVisible}) => {
   return (
     <View style={styles.container}>
       <ScrollView>
-        <KeyboardAvoidingView behavior="position">
-          <Text style={styles.title}>E-MAIL İLE GİRİŞ</Text>
-          <Formik
-            initialValues={{
-              email: '',
-              password: '',
-            }}
-            validationSchema={loginValidationSchema}
-            onSubmit={onSubmit}>
-            {({
-              handleChange,
-              handleBlur,
-              handleSubmit,
-              values,
-              errors,
-              isValid,
-              touched,
-              isSubmitting,
-              i,
-            }) => (
-              <View style={{flexDirection: 'column', flex: 1}}>
-                <View style={styles.marginBottom}>
-                  <Input
-                    label="E-posta"
-                    keyboardType="email-address"
-                    autoCapitalize={'none'}
-                    value={values.email}
-                    name="email"
-                    onChangeText={handleChange('email')}
-                  />
-                  {touched.email && errors.email && (
-                    <Text style={{fontSize: 10, color: 'red'}}>
-                      {errors.email}
-                    </Text>
-                  )}
-                </View>
-                <View style={styles.marginBottom}>
-                  <Input
-                    label="Şifre"
-                    value={values.password}
-                    secureTextEntry
-                    onChangeText={handleChange('password')}
-                  />
-                  {touched.password && errors.password && (
-                    <Text style={{fontSize: 10, color: 'red'}}>
-                      {errors.password}
-                    </Text>
-                  )}
-                </View>
-                <View style={styles.action}>
-                  <Button onPress={handleSubmit} color="secondary" full>
-                    <Text style={styles.textbtn}>Devam Et</Text>
-                  </Button>
-                </View>
+        <Text style={styles.title}>E-MAIL İLE GİRİŞ</Text>
+        <Formik
+          initialValues={{
+            email: '',
+            password: '',
+          }}
+          validationSchema={loginValidationSchema}
+          onSubmit={onSubmit}>
+          {({
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            values,
+            errors,
+            isValid,
+            touched,
+            isSubmitting,
+            i,
+          }) => (
+            <View style={{flexDirection: 'column', flex: 1}}>
+              <View style={styles.marginBottom}>
+                <Input
+                  label="E-posta"
+                  keyboardType="email-address"
+                  autoCapitalize={'none'}
+                  value={values.email}
+                  name="email"
+                  onChangeText={handleChange('email')}
+                />
+                {touched.email && errors.email && (
+                  <Text style={{fontSize: 10, color: 'red'}}>
+                    {errors.email}
+                  </Text>
+                )}
               </View>
-            )}
-          </Formik>
-        </KeyboardAvoidingView>
+              <View style={styles.marginBottom}>
+                <Input
+                  label="Şifre"
+                  value={values.password}
+                  secureTextEntry
+                  onChangeText={handleChange('password')}
+                />
+                {touched.password && errors.password && (
+                  <Text style={{fontSize: 10, color: 'red'}}>
+                    {errors.password}
+                  </Text>
+                )}
+              </View>
+              <View style={styles.action}>
+                <Button onPress={handleSubmit} color="secondary" full>
+                  {!isSubmitting ? (
+                    <Text style={styles.textbtn}>Devam Et</Text>
+                  ) : (
+                    <Spinner
+                      color={Theme.colors.white}
+                      isVisible
+                      size={40}
+                      type={'Wave'}
+                    />
+                  )}
+                </Button>
+              </View>
+            </View>
+          )}
+        </Formik>
       </ScrollView>
     </View>
   );

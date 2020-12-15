@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useContext, useRef, useState} from 'react';
 import {
   Text,
   StyleSheet,
@@ -10,15 +10,26 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import ApiRepository from '../../Repository/Api';
 import {faTimes} from '@fortawesome/free-solid-svg-icons';
 import {SvgFromXml} from 'react-native-svg';
 import {Theme, Icons} from '../../../contants';
+import AuthContext from '../../Contexts/AuthContext';
 
 const {width, height} = Dimensions.get('screen');
 
 const ActiveAlarm = ({setIsAlarm, changeBg}) => {
+  const {user} = useContext(AuthContext);
+
+  const startBorderWidth = width - 250;
+  const endBorderWidth = width - 50;
+
+  const borderAnimation = useRef(new Animated.Value(startBorderWidth)).current;
+  const fadeAnim = useRef(new Animated.Value(1)).current;
+
   const [cancelAlert, setCancelAlert] = useState(false);
   const animationSiren = useRef(new Animated.Value(0)).current;
+
   const sirenAnimation = animationSiren.interpolate({
     inputRange: [0, 1],
     outputRange: [width / 1.25, width / 6],
@@ -26,6 +37,36 @@ const ActiveAlarm = ({setIsAlarm, changeBg}) => {
   });
 
   const animationLoading = useRef(new Animated.Value(0)).current;
+
+  runAnimationAlarm = (stop) => {
+    if (!stop) {
+      borderAnimation.setValue(startBorderWidth);
+      fadeAnim.setValue(1);
+
+      Animated.parallel([
+        Animated.timing(borderAnimation, {
+          toValue: endBorderWidth,
+          duration: 1500,
+          easing: Easing.linear,
+          useNativeDriver: false,
+        }),
+        Animated.timing(fadeAnim, {
+          toValue: 0,
+          duration: 1500,
+          easing: Easing.linear,
+          useNativeDriver: false,
+        }),
+      ]).start(() => {
+        runAnimationAlarm();
+      });
+    }
+  };
+  useEffect(() => {
+    runAnimationAlarm();
+    return function cleanUp() {
+      runAnimation(false);
+    };
+  }, []);
 
   const pan = useRef(new Animated.ValueXY()).current;
   const panResponder = useRef(
@@ -44,7 +85,6 @@ const ActiveAlarm = ({setIsAlarm, changeBg}) => {
         const contanierWidth = width / 2.5;
 
         if (Math.abs(pan.x._value) > contanierWidth) {
-          console.log('swipe can run');
           cancelProgress();
         } else {
           Animated.spring(pan, {
@@ -57,27 +97,38 @@ const ActiveAlarm = ({setIsAlarm, changeBg}) => {
     }),
   ).current;
 
-  cancelProgress = () => {
-    setCancelAlert(true);
-    Animated.parallel([
-      Animated.timing(animationSiren, {
-        toValue: 1,
-        easing: Easing.linear,
-        useNativeDriver: false,
-        duration: 500,
-      }),
-      Animated.timing(animationLoading, {
-        toValue: 1,
-        easing: Easing.linear,
-        delay: 500,
-        useNativeDriver: false,
-      }),
-    ]).start();
-    setTimeout(() => {
+  cancelProgress = async () => {
+    const api = new ApiRepository();
+    const {data} = await api.post('/Alarm/Cancel');
+    if (data?.Success) {
+      setCancelAlert(true);
+      Animated.parallel([
+        Animated.timing(animationSiren, {
+          toValue: 1,
+          easing: Easing.linear,
+          useNativeDriver: false,
+          duration: 500,
+        }),
+        Animated.timing(animationLoading, {
+          toValue: 1,
+          easing: Easing.linear,
+          delay: 500,
+          useNativeDriver: false,
+        }),
+      ]).start();
       changeBg(0);
       setIsAlarm(false);
-    }, 2000);
+    }
   };
+
+  const borderStyles = [
+    styles.circleBorder,
+    {
+      width: borderAnimation,
+      height: borderAnimation,
+      opacity: fadeAnim,
+    },
+  ];
 
   return (
     <>
@@ -85,21 +136,21 @@ const ActiveAlarm = ({setIsAlarm, changeBg}) => {
         <View style={styles.topArea}>
           <View style={styles.userInfo}>
             <Text style={styles.userText}>Hoşgeldiniz</Text>
-            <Text style={styles.userText}>Samet Başar</Text>
+            <Text
+              style={styles.userText}>{`${user.name}  ${user.surname}`}</Text>
           </View>
         </View>
         <View style={styles.circleWrapper}>
-          <View style={styles.circleBorder}>
-            <View style={styles.circle}>
-              <View style={styles.circleInside}>
-                <SvgFromXml
-                  fill={Theme.colors.white}
-                  width="50%"
-                  height="100"
-                  xml={Icons.siren}
-                />
-                <Text style={styles.circleText}>Alarm Verildi</Text>
-              </View>
+          <Animated.View style={borderStyles} />
+          <View style={styles.circle}>
+            <View style={styles.circleInside}>
+              <SvgFromXml
+                fill={Theme.colors.white}
+                width="50%"
+                height="100"
+                xml={Icons.siren}
+              />
+              <Text style={styles.circleText}>Alarm Verildi</Text>
             </View>
           </View>
         </View>
@@ -170,20 +221,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   circleBorder: {
-    width: width - 50,
-    height: width - 50,
     borderWidth: 15,
-    borderColor: '#d6032c',
+    borderColor: '#e60030',
     borderRadius: 500,
     alignItems: 'center',
     justifyContent: 'center',
     alignContent: 'center',
+    position: 'absolute',
   },
   circle: {
     width: width - 125,
     height: width - 125,
-    borderWidth: 10,
-    borderColor: '#e60030',
     borderRadius: 200,
     alignItems: 'center',
     justifyContent: 'center',

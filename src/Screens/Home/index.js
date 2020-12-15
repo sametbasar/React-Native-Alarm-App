@@ -1,6 +1,7 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, {useState, useRef, useContext, useEffect} from 'react';
 import {StyleSheet, Dimensions, Animated, Text, Easing} from 'react-native';
 import {Theme} from '../../../contants';
+import AuthContext from '../../Contexts/AuthContext';
 import ActiveAlarm from './ActiveAlarm';
 import InActiveAlarm from './InActiveAlarm';
 
@@ -12,8 +13,11 @@ const statusBackground = {
 };
 
 const HomeScreen = () => {
-  const [isAlarm, setIsAlarm] = useState(false);
-  const containerAnimation = useRef(new Animated.Value(0)).current;
+  const {user} = useContext(AuthContext);
+  const isEmergency = user?.emergency;
+  const [isAlarm, setIsAlarm] = useState(isEmergency);
+  const containerAnimation = useRef(new Animated.Value(isEmergency ? 1 : 0))
+    .current;
   const containerStyle = containerAnimation.interpolate({
     inputRange: [0, 1],
     outputRange: [statusBackground.passive, statusBackground.active],

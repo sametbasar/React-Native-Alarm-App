@@ -9,7 +9,7 @@ const RegisterScreen = () => {
     <>
       <ScrollView>
         <View style={styles.container}>
-          <ThirdPary />
+          {/* <ThirdPary /> */}
           <Form />
         </View>
       </ScrollView>

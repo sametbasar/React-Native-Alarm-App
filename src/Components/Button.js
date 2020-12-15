@@ -3,10 +3,11 @@ import {TouchableOpacity, StyleSheet} from 'react-native';
 import {Theme} from '../../contants';
 
 const Button = (props) => {
-  const {color, outline, smallButton, full, children} = props;
+  const {color, outline, smallButton, full, half, children} = props;
   const buttonStyles = [
     styles.button,
     full && styles.full,
+    half && styles.half,
     color && styles[color],
     smallButton && styles.miniButton,
     color && !styles[color] ? {backgroundColor: color} : null,
@@ -31,6 +32,11 @@ const styles = StyleSheet.create({
   },
   full: {
     width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  half: {
+    width: '48%',
     alignItems: 'center',
     justifyContent: 'center',
   },

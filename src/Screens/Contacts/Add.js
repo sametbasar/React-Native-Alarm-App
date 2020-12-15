@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {
   View,
   TouchableOpacity,
@@ -6,26 +6,82 @@ import {
   Switch,
   StyleSheet,
   Text,
+  Alert,
 } from 'react-native';
+import {Formik} from 'formik';
+import {ContactValidations} from './validations';
+import AuthContext from '../../Contexts/AuthContext';
+import ApiRepository from '../../Repository/Api';
 import {Icons, Theme} from '../../../contants';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faTimes} from '@fortawesome/free-solid-svg-icons';
 import {Input, Button} from '../../Components';
+import {ContactAddInformationService} from '../../Enums/config';
+import Spinner from 'react-native-spinkit';
 
 const {width, height} = Dimensions.get('screen');
 const Add = ({modalizeRef}) => {
+  const {user, updateUser} = useContext(AuthContext);
+  let familyMemberCount = 0;
+  user.contacts.find((a) => {
+    a.badge.find((b) => {
+      if (b.name === 'aile üyesi') familyMemberCount++;
+    });
+  });
   const closeModal = () => {
     modalizeRef.current?.close();
   };
-  const coordsHome = {
-    latitude: 41.0167199,
-    longitude: 29.1245255,
-  };
 
-  const [isEnabled, setIsEnabled] = useState(true);
-  const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
-  const [isEnabled2, setIsEnabled2] = useState(false);
-  const toggleSwitch2 = () => setIsEnabled2((previousState) => !previousState);
+  const [familySwitch, setFamilySwitch] = useState(familyMemberCount <= 4);
+  const toggleSwitch = () => setFamilySwitch((previousState) => !previousState);
+  const [emergencySwitch, setEmergencySwitch] = useState(false);
+  const toggleEmergency = () =>
+    setEmergencySwitch((previousState) => !previousState);
+
+  const onSubmit = async (values, {setSubmitting, resetForm}) => {
+    try {
+      setSubmitting(true);
+      let contact = {
+        ...values,
+        name: values.name + ' ' + values.surname,
+        badge: [
+          {
+            id: 1,
+            name: 'onay bekliyor',
+          },
+        ],
+      };
+      if (familySwitch) {
+        contact.badge.push({
+          id: 2,
+          name: 'aile üyesi',
+        });
+      }
+      if (emergencySwitch) {
+        contact.badge.push({
+          id: 3,
+          name: 'acil durum',
+        });
+      }
+      const api = new ApiRepository();
+      const {data} = await api.post(ContactAddInformationService, contact);
+
+      if (data.Success) {
+        updateUser(data.Data);
+        Alert.alert('Kişiler', data.Message);
+      } else {
+        Alert.alert('Kişiler', data.Message);
+      }
+
+      resetForm(); // Formu resetler.
+      setSubmitting(false); //buton loadingi kaldırır.
+      closeModal(); // modalı kapatır.
+    } catch (err) {
+      console.log(err);
+      setSubmitting(false); //buton loadingi kaldırır.
+      resetForm(); // formu resetler
+    }
+  };
 
   return (
     <View style={styles.centeredView}>
@@ -36,34 +92,133 @@ const Add = ({modalizeRef}) => {
             <FontAwesomeIcon icon={faTimes} size={25} />
           </TouchableOpacity>
         </View>
-        <View style={styles.form}>
-          <Input label="İsim" half />
-          <Input label="Soyad" half />
-          <Input label="Telefon" keyboardType="number-pad" />
-          <Input label="E-Posta Adresi" keyboardType="email-address" />
-          <View style={styles.switchArea}>
-            <View style={styles.switchTextArea}>
-              <Text style={styles.switchText}>Aile Listesine Ekle</Text>
-              <Text style={styles.remainAdd}>
-                Kalan Aile Üyesi Hakkınız (2/4)
-              </Text>
-            </View>
-            <Switch onValueChange={toggleSwitch} value={isEnabled} />
-          </View>
-          <View style={styles.switchArea}>
-            <View style={styles.switchTextArea}>
-              <Text style={styles.switchAlarmText}>
-                Acil Durum Listesine Ekle
-              </Text>
-            </View>
-            <Switch onValueChange={toggleSwitch2} value={isEnabled2} />
-          </View>
-          <View style={styles.action}>
-            <Button onPress={() => alert('todo')} color="secondary" full>
-              <Text style={styles.textbtn}>Ekle</Text>
-            </Button>
-          </View>
-        </View>
+        <Formik
+          initialValues={{
+            name: '',
+            surname: '',
+            email: '',
+            phone: '',
+          }}
+          validationSchema={ContactValidations}
+          onSubmit={onSubmit}>
+          {({
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            values,
+            errors,
+            isValid,
+            touched,
+            isSubmitting,
+            i,
+          }) => (
+            <>
+              <View style={styles.form}>
+                <View style={styles.formGroup}>
+                  <View>
+                    <Input
+                      label="İsim"
+                      name="name"
+                      value={values.name}
+                      onChangeText={handleChange('name')}
+                      half
+                    />
+                    {touched.name && errors.name && (
+                      <Text style={{fontSize: 10, color: 'red'}}>
+                        {errors.name}
+                      </Text>
+                    )}
+                  </View>
+                  <View>
+                    <Input
+                      label="Soyad"
+                      name="surname"
+                      value={values.surname}
+                      onChangeText={handleChange('surname')}
+                      half
+                    />
+                    {touched.surname && errors.surname && (
+                      <Text style={{fontSize: 10, color: 'red'}}>
+                        {errors.surname}
+                      </Text>
+                    )}
+                  </View>
+                </View>
+                <View style={styles.marginBottom}>
+                  <Input
+                    label="Telefon"
+                    name="phone"
+                    value={values.phone}
+                    onChangeText={handleChange('phone')}
+                    keyboardType="number-pad"
+                  />
+                  {touched.phone && errors.phone && (
+                    <Text style={{fontSize: 10, color: 'red'}}>
+                      {errors.phone}
+                    </Text>
+                  )}
+                </View>
+                <View style={styles.marginBottom}>
+                  <Input
+                    label="E-Posta Adresi"
+                    name="email"
+                    autoCapitalize={'none'}
+                    value={values.email}
+                    onChangeText={handleChange('email')}
+                    keyboardType="email-address"
+                  />
+                  {touched.email && errors.email && (
+                    <Text style={{fontSize: 10, color: 'red'}}>
+                      {errors.email}
+                    </Text>
+                  )}
+                </View>
+                <View style={styles.switchArea}>
+                  <View style={styles.switchTextArea}>
+                    <Text style={styles.switchText}>Aile Listesine Ekle</Text>
+                    <Text style={styles.remainAdd}>
+                      Kalan Aile Üyesi Hakkınız ({familyMemberCount}/4)
+                    </Text>
+                  </View>
+                  <Switch
+                    disabled={familyMemberCount === 4}
+                    onValueChange={toggleSwitch}
+                    value={familySwitch}
+                  />
+                </View>
+                <View style={styles.switchArea}>
+                  <View style={styles.switchTextArea}>
+                    <Text style={styles.switchAlarmText}>
+                      Acil Durum Listesine Ekle
+                    </Text>
+                  </View>
+                  <Switch
+                    onValueChange={toggleEmergency}
+                    value={emergencySwitch}
+                  />
+                </View>
+                <View style={styles.action}>
+                  <Button
+                    onPress={handleSubmit}
+                    disabled={isSubmitting}
+                    color="secondary"
+                    full>
+                    {!isSubmitting ? (
+                      <Text style={styles.textbtn}>Ekle</Text>
+                    ) : (
+                      <Spinner
+                        color={Theme.colors.white}
+                        isVisible
+                        size={40}
+                        type={'Wave'}
+                      />
+                    )}
+                  </Button>
+                </View>
+              </View>
+            </>
+          )}
+        </Formik>
       </View>
     </View>
   );
@@ -72,6 +227,17 @@ const Add = ({modalizeRef}) => {
 const styles = StyleSheet.create({
   modalView: {
     paddingTop: 20,
+  },
+  marginBottom: {
+    marginBottom: 15,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  formGroup: {
+    marginBottom: 15,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%',
   },
   title: {
     flexDirection: 'row',
@@ -92,7 +258,7 @@ const styles = StyleSheet.create({
     color: Theme.colors.text,
   },
   form: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
     alignItems: 'flex-start',

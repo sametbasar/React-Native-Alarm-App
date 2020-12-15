@@ -4,6 +4,16 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 platform :ios, '10.0'
 
 target 'PronetMobileApp' do
+
+  # … 
+ 
+  permissions_path = '../node_modules/react-native-permissions/ios' 
+
+  pod 'Permission-Contacts', :path => "#{permissions_path}/Contacts"
+  pod 'Permission-FaceID', :path => "#{permissions_path}/FaceID"
+  pod 'Permission-LocationWhenInUse', :path => "#{permissions_path}/LocationWhenInUse"
+  pod 'Permission-Notifications', :path => "#{permissions_path}/Notifications"
+ 
   
   # React Native Maps dependencies
   rn_maps_path = '../node_modules/react-native-maps'
@@ -38,5 +48,5 @@ target 'PronetMobileApp-tvOS' do
   target 'PronetMobileApp-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
-  end
+  end   
 end

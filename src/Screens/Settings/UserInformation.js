@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react';
-import {View, StyleSheet, Dimensions, Text, Alert} from 'react-native';
+import {View, StyleSheet, Text, Alert} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {Theme} from '../../../contants';
@@ -12,15 +12,13 @@ import {UserInformationSaveService} from '../../Enums/config';
 import ApiRepository from '../../Repository/Api';
 import {PoupLoader} from '../../Components/Loader';
 
-const {width, height} = Dimensions.get('screen');
-
 const sex = [
   {id: 1, name: 'Erkek'},
   {id: 2, name: 'Kadın'},
 ];
 
 const UserInformation = () => {
-  const {user} = useContext(AuthContext);
+  const {user, updateUser} = useContext(AuthContext);
   const [selected, setSelected] = useState({
     id: user.gender === 'Erkek' ? 1 : 2,
     name: user.gender,
@@ -98,12 +96,14 @@ const UserInformation = () => {
       const Api = new ApiRepository();
       Api.put(UserInformationSaveService, data)
         .then(({data}) => {
-          if (data.Success === 'true') {
-            const {Data} = data;
-            auth.updateUser(Data);
+          if (data.Success) {
+            const {Data} = data; 
+            updateUser(Data);
+            console.warn(user.name);
             AsyncStorage.setItem('AuthToken', Data.token);
             Alert.alert('Kişisel Bilgiler', 'Güncellendi!');
           } else {
+            console.warn('sad');
             Alert.alert('Kişisel Bilgiler', data.Message);
           }
           setLoading(false);

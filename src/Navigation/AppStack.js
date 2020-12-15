@@ -24,7 +24,9 @@ const App = createStackNavigator();
 const AppStack = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [StartScreen, setStartScreen] = useState('Splash');
+
   checkUserState(isLoading, setIsLoading, setStartScreen);
+
   return isLoading ? Loading() : NavigationStack(StartScreen);
 };
 

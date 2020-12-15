@@ -14,6 +14,10 @@ const Badge = (props) => {
       background = styles.danger;
       text = styles.dangerText;
       break;
+    case 'acil durum':
+      background = styles.blue;
+      text = styles.blueText;
+      break;
     case 'onay bekliyor':
       background = styles.gray;
       text = styles.grayText;
@@ -57,6 +61,12 @@ const styles = StyleSheet.create({
   },
   grayText: {
     color: Theme.colors.gray,
+  },
+  blue: {
+    backgroundColor: Theme.colors.secondary,
+  },
+  blueText: {
+    color: Theme.colors.white,
   },
 });
 

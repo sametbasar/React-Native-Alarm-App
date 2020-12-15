@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {
   Text,
   Image,
@@ -9,80 +9,28 @@ import {
 } from 'react-native';
 import {Badge} from '../../Components/';
 import {Theme} from '../../../contants';
+import AuthContext from '../../Contexts/AuthContext';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {faUser} from '@fortawesome/free-solid-svg-icons';
 
-const data = [
-  {
-    id: 1,
-    name: 'Babam',
-    image: require('../../../assets/media/user.jpg'),
-    order: '1',
-    confirmed: true,
-    badges: [
-      {
-        id: 1,
-        name: 'aile üyesi',
-      },
-      {
-        id: 2,
-        name: 'kişiler listesinde',
-      },
-    ],
-  },
-  {
-    id: 2,
-    name: 'Deniz Yılmaz',
-    image: require('../../../assets/media/user.jpg'),
-    order: '2',
-    confirmed: false,
-    badges: [
-      {
-        id: 1,
-        name: 'onay bekliyor',
-      },
-    ],
-  },
-  {
-    id: 3,
-    name: 'Erdem Yılmaz',
-    image: require('../../../assets/media/user.jpg'),
-    order: '3',
-    confirmed: true,
-    badges: [],
-  },
-  {
-    id: 4,
-    name: 'Merve Solmazer',
-    image: require('../../../assets/media/user.jpg'),
-    order: '4',
-    confirmed: true,
-    badges: [{id: 1, name: 'aile üyesi'}],
-  },
-  {
-    id: 5,
-    name: 'Begüm Yılmaz',
-    image: require('../../../assets/media/user.jpg'),
-    order: '5',
-    confirmed: true,
-    badges: [{id: 1, name: 'aile üyesi'}],
-  },
-];
 const {width, height} = Dimensions.get('screen');
 
 const List = () => {
-  _renderItem = ({item}) => {
+  const {user} = useContext(AuthContext); 
+  _renderItem = ({item, index}) => {
     return (
       <View style={[styles.item, !item.confirmed ? styles.disabled : null]}>
-        <View>
-          <Image style={styles.image} source={item.image} />
+        <View style={styles.avatar}>
+          <FontAwesomeIcon color={Theme.colors.gray} icon={faUser} size={30} />
         </View>
         <View style={styles.infoWrap}>
           <View style={styles.userName}>
-            <Text style={styles.userOrder}>{item.order}. KİŞİ</Text>
+            <Text style={styles.userOrder}>{++index}. KİŞİ</Text>
             <Text style={styles.userNameText}>{item.name}</Text>
           </View>
           <View style={styles.badges}>
-            {item.badges.map((badge) => {
-              return <Badge key={badge.id} badge={badge.name} />;
+            {item.badge.map((b, i) => {
+              return <Badge key={i} badge={b.name} />;
             })}
           </View>
         </View>
@@ -92,7 +40,7 @@ const List = () => {
   return (
     <View style={styles.container}>
       <FlatList
-        data={data}
+        data={user.contacts}
         keyExtractor={(item, key) => `item-${key}`}
         renderItem={(data, index) => _renderItem(data, index)}
       />
@@ -116,10 +64,14 @@ const styles = StyleSheet.create({
   disabled: {
     opacity: 0.25,
   },
-  image: {
+  avatar: {
     width: 60,
     height: 60,
     borderRadius: 50,
+    borderWidth: 1,
+    borderColor: Theme.colors.gray,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   userOrder: {
     fontSize: 14,
@@ -135,8 +87,7 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     flexDirection: 'column',
   },
-  userName: {   
-  },
+  userName: {},
   badges: {
     flexWrap: 'wrap',
     flexDirection: 'row',

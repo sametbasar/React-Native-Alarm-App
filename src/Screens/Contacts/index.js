@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useContext, useEffect} from 'react';
 import {Text, Dimensions, StyleSheet, View} from 'react-native';
 import {Modalize} from 'react-native-modalize';
 import {Theme} from '../../../contants';
@@ -8,22 +8,30 @@ import {Button} from '../../Components/';
 import List from './List';
 import Loading from './Loading';
 import Add from './Add';
+import AuthContext from '../../Contexts/AuthContext';
 
-const {width, height} = Dimensions.get('screen');
+const {width} = Dimensions.get('screen');
 
 const ContactScreen = () => {
-  const [loading, setLoading] = useState(false);
+  const {user} = useContext(AuthContext);
+  const [loading] = useState(false);
   const ModalizeRef = useRef(null);
+
+  useEffect(() => {
+    if (user?.contacts?.length === 0) {
+      ModalizeRef.current?.open();
+    }
+  }, [user?.contacts?.length]);
   return (
-    <>
+    <View style={styles.container}>
       <View style={styles.topArea}>
         <View style={styles.topTextArea}>
           <Text style={styles.topText}>
             Acil Durumlarda haberdar edilecek kişiler
           </Text>
-          <Button smallButton outline color="gray">
+          {/* <Button smallButton outline color="gray">
             <Text style={styles.buttonText}>düzenle</Text>
-          </Button>
+          </Button> */}
         </View>
       </View>
       {loading ? <Loading /> : <List />}
@@ -45,11 +53,15 @@ const ContactScreen = () => {
       <Modalize modalTopOffset={100} ref={ModalizeRef}>
         <Add modalizeRef={ModalizeRef} />
       </Modalize>
-    </>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: Theme.colors.white,
+  },
   topArea: {
     flex: 0.17,
     paddingTop: 70,
@@ -57,7 +69,7 @@ const styles = StyleSheet.create({
     marginBottom: 25,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    borderBottomColor: Theme.colors.gray,
+    borderBottomColor: Theme.colors.gray100,
     borderBottomWidth: 1,
   },
   topTextArea: {
@@ -77,7 +89,7 @@ const styles = StyleSheet.create({
     fontSize: Theme.sizes.caption,
   },
   action: {
-    borderTopColor: Theme.colors.gray,
+    borderTopColor: Theme.colors.gray100,
     borderTopWidth: 1,
     paddingVertical: 25,
     marginVertical: 15,

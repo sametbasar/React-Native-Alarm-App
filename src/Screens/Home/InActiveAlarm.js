@@ -1,4 +1,4 @@
-import React, {useRef, useContext} from 'react';
+import React, {useRef, useContext, useState, useEffect} from 'react';
 import {
   Text,
   StyleSheet,
@@ -8,22 +8,168 @@ import {
   Image,
   Animated,
   Easing,
+  Alert,
+  Platform,
 } from 'react-native';
+import {check, PERMISSIONS, request, RESULTS} from 'react-native-permissions';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faTimes} from '@fortawesome/free-solid-svg-icons';
 import {SvgFromXml} from 'react-native-svg';
 import {Theme, Icons} from '../../../contants';
 import {Modalize} from 'react-native-modalize';
 import LiveLocation from './LiveLocation';
-import {Badge} from '../../Components';
+import {Button} from '../../Components';
 import AuthContext from '../../Contexts/AuthContext';
+import ApiRepository from '../../Repository/Api';
+import moment from 'moment';
+import {ContactPermissionService} from '../../Enums/config';
+import Geolocation from '@react-native-community/geolocation';
 
-const {width, height} = Dimensions.get('screen');
+moment.updateLocale('tr', {
+  relativeTime: {
+    future: 'in %s',
+    past: '%s önce',
+    s: 'bir saniye',
+    ss: '%d saniye',
+    m: 'bir dakika',
+    mm: '%d dakika',
+    h: 'yaklaşık bir saat',
+    hh: '%d saat',
+    d: 'yaklaşık bir gün',
+    dd: '%d gün',
+    w: 'bir hafta ',
+    ww: '%d hafta',
+    M: 'bir ay',
+    MM: '%d ay',
+    y: 'bir yıl',
+    yy: '%d yıl',
+  },
+});
+
+const {width} = Dimensions.get('screen');
 
 const InActiveAlarm = ({setIsAlarm, changeBg}) => {
-  const alertAnimation = useRef(new Animated.Value(-200)).current;
+  const {user, updateUser} = useContext(AuthContext);
+  const [animationCircle, setAnimationCircle] = useState(false);
+
+  const startBorderWidth = width - 200;
+  const endBorderWidth = width - 50;
+
+  const borderAnimation = useRef(new Animated.Value(startBorderWidth)).current;
+  const fadeAnim = useRef(new Animated.Value(1)).current;
+
+  runAnimation = () => {
+    if (!animationCircle) {
+      borderAnimation.setValue(startBorderWidth);
+      fadeAnim.setValue(1);
+
+      Animated.parallel([
+        Animated.timing(borderAnimation, {
+          toValue: endBorderWidth,
+          duration: 1500,
+          easing: Easing.linear,
+          useNativeDriver: false,
+        }),
+        Animated.timing(fadeAnim, {
+          toValue: 0,
+          duration: 1500,
+          easing: Easing.linear,
+          useNativeDriver: false,
+        }),
+      ]).start(() => {
+        runAnimation();
+      });
+    }
+  };
+
+  const checkPermissions = async () => {
+    const version = Platform.OS.toUpperCase();
+    let res = false;
+
+    if (version === 'IOS') {
+      const result = await check(PERMISSIONS.IOS.LOCATION_WHEN_IN_USE);
+      switch (result) {
+        case RESULTS.UNAVAILABLE:
+          // 'This feature is not available (on this device / in this context)',
+          res = false;
+          break;
+        case RESULTS.DENIED:
+          let resultReqDenied = await request(
+            PERMISSIONS.IOS.LOCATION_WHEN_IN_USE,
+          );
+          if (resultReqDenied == RESULTS.GRANTED) {
+            res = true;
+          }
+          break;
+        case RESULTS.LIMITED:
+          let resultReqLimited = await request(
+            PERMISSIONS.IOS.LOCATION_WHEN_IN_USE,
+          );
+          if (resultReqLimited == RESULTS.GRANTED) {
+            res = true;
+          }
+          break;
+        case RESULTS.GRANTED:
+          res = true;
+          //console.warn('izin verildi');
+          break;
+        case RESULTS.BLOCKED:
+          res = false;
+          Alert.alert(
+            'Acil durum butonunu kullanmak için konum izni vermeniz gerekmektedir.',
+          );
+          break;
+      }
+    } else if (version == 'ANDROID') {
+      const result = await check(PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION);
+      switch (result) {
+        case RESULTS.UNAVAILABLE:
+          // 'This feature is not available (on this device / in this context)',
+          res = false;
+          break;
+        case RESULTS.DENIED:
+          let resultReqDenied = await request(
+            PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION,
+          );
+          if (resultReqDenied == RESULTS.GRANTED) {
+            res = true;
+          }
+          break;
+        case RESULTS.LIMITED:
+          let resultReqLimited = await request(
+            PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION,
+          );
+          if (resultReqLimited == RESULTS.GRANTED) {
+            res = true;
+          }
+          break;
+        case RESULTS.GRANTED:
+          //izin verildi
+          res = true;
+          break;
+        case RESULTS.BLOCKED:
+          res = false;
+          Alert.alert(
+            'Acil durum butonunu kullanmak için konum izni vermeniz gerekmektedir.',
+          );
+          break;
+      }
+    }
+    return res;
+  };
+
+  useEffect(() => {
+    runAnimation();
+
+    return function cleanUp() {
+      setAnimationCircle(true);
+    };
+  }, [user]);
+
+  const notifyTop = user?.notifications?.length > 0 ? 30 : -200;
+  const alertAnimation = useRef(new Animated.Value(notifyTop)).current;
   const modalizeRef = useRef(null);
-  const auth = useContext(AuthContext);
+
   const alertRun = (value) => {
     Animated.timing(alertAnimation, {
       toValue: value,
@@ -33,9 +179,29 @@ const InActiveAlarm = ({setIsAlarm, changeBg}) => {
     }).start();
   };
 
-  const runSiren = () => {
-    changeBg(1);
-    setIsAlarm(true);
+  const runSiren = async () => {
+    const permission = await checkPermissions();
+    if (permission) {
+      try {
+        Geolocation.getCurrentPosition(async (info) => {
+          const {latitude, longitude} = info.coords;
+          const postData = {
+            latitude,
+            longitude,
+          };
+          const api = new ApiRepository();
+          const {data} = await api.post('/Alarm', postData);
+          if (data?.Success) {
+            changeBg(1);
+            setIsAlarm(true);
+          } else {
+            Alert.alert(data?.Message);
+          }
+        });
+      } catch (error) {
+        Alert.alert(error);
+      }
+    }
   };
 
   const setModalVisible = () => {
@@ -43,90 +209,160 @@ const InActiveAlarm = ({setIsAlarm, changeBg}) => {
     alertRun(-200);
   };
 
+  const borderStyles = [
+    styles.circleBorder,
+    {
+      width: borderAnimation,
+      height: borderAnimation,
+      opacity: fadeAnim,
+    },
+  ];
+
+  const permissionSubmit = async (email, permission) => {
+    try {
+      const postData = {
+        email,
+        permission,
+      };
+      const api = new ApiRepository();
+      const {data} = await api.post(ContactPermissionService, postData);
+      Alert.alert(data?.Message);
+      updateUser(data?.Data);
+    } catch (err) {
+      alert(err);
+    }
+  };
+
   return (
     <>
       <View style={{paddingTop: 30}}>
-        <Animated.View
-          style={[
+        {/* Notify Area */}
+        {user?.notifications?.map((notify) => {
+          const boxStyles = [
             styles.alertBox,
+            notify.type === 'info'
+              ? styles.alertInfoType
+              : styles.alertDangerType,
             {top: alertAnimation, opacity: alertAnimation},
-          ]}>
-          <View style={styles.alertTop}>
-            <View style={styles.alertTitle}>
-              <SvgFromXml
-                fill={Theme.colors.danger}
-                width="20"
-                height="20"
-                xml={Icons.siren}
-              />
-              <Text style={styles.alertTitleText}>Yeni Uyarı</Text>
-            </View>
-            <View style={styles.momentArea}>
-              <Text style={styles.momenText}>15 dakika önce</Text>
-              <TouchableOpacity onPress={() => alertRun(-200)}>
-                <FontAwesomeIcon
-                  size={20}
-                  color={Theme.colors.danger}
-                  icon={faTimes}
-                />
-              </TouchableOpacity>
-            </View>
-          </View>
-          <View style={styles.alertInfo}>
-            <View style={styles.infoArea}>
-              <Image
-                style={styles.userImage}
-                source={require('../../../assets/media/user.jpg')}
-              />
-              <View style={styles.userName}>
-                <Text style={styles.userNameText}>Cem SAL</Text>
-                <Badge badge="aile üyesi" />
+          ];
+          return (
+            <Animated.View key={`notify-${notify.email}`} style={boxStyles}>
+              <View style={styles.alertTop}>
+                <View style={styles.alertTitle}>
+                  <SvgFromXml
+                    fill={Theme.colors.danger}
+                    width="20"
+                    height="20"
+                    xml={Icons.siren}
+                  />
+                  <Text style={styles.alertTitleText}>
+                    {notify.type === 'info' ? 'Yeni Bildirim' : 'Yeni Uyarı'}
+                  </Text>
+                </View>
+                <View style={styles.momentArea}>
+                  <Text style={styles.momenText}>
+                    {moment(notify.date).locale('tr').fromNow()}
+                  </Text>
+                  <TouchableOpacity onPress={() => alertRun(-200)}>
+                    <FontAwesomeIcon
+                      size={20}
+                      color={Theme.colors.danger}
+                      icon={faTimes}
+                    />
+                  </TouchableOpacity>
+                </View>
               </View>
-            </View>
-            <View style={styles.action}>
-              <TouchableOpacity
-                onPress={() => setModalVisible()}
-                style={styles.actionButton}>
-                <Text style={styles.actionButtonText}>Canlı Konumu Gör</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </Animated.View>
+              <View style={styles.alertInfo}>
+                {notify.type !== 'info' ? (
+                  <View style={styles.avatar}>
+                    <Image
+                      style={styles.userImage}
+                      source={require('../../../assets/media/user.jpg')}
+                    />
+                  </View>
+                ) : null}
+                <View style={styles.infoArea}>
+                  <View style={styles.userName}>
+                    <Text style={styles.userNameText}>{notify.name}</Text>
+                  </View>
+                  <View style={styles.alertMessage}>
+                    <Text>{notify.message}</Text>
+                  </View>
+                </View>
+              </View>
+              {notify.type === 'danger' ? (
+                <View style={styles.action}>
+                  <TouchableOpacity
+                    onPress={() => setModalVisible()}
+                    style={styles.actionButton}>
+                    <Text style={styles.actionButtonText}>
+                      Canlı Konumu Gör
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+              ) : (
+                <View style={styles.actionPermission}>
+                  <Button
+                    half
+                    smallButton
+                    color="secondary"
+                    onPress={() => permissionSubmit(notify.email, true)}>
+                    <Text style={styles.actionButtonText}>İzin Ver</Text>
+                  </Button>
+                  <Button
+                    half
+                    smallButton
+                    outline
+                    color="gray"
+                    onPress={() => permissionSubmit(notify.email, false)}>
+                    <Text>İzin Verme</Text>
+                  </Button>
+                </View>
+              )}
+            </Animated.View>
+          );
+        })}
+
+        {/* Notify Area End */}
+
         <View style={styles.topArea}>
           <View style={styles.userInfo}>
             <Text style={styles.userText}>Hoşgeldiniz</Text>
             <Text style={styles.userText}>
-              {`${auth.user.name}  ${auth.user.surname}`}
+              {`${user.name}  ${user.surname}`}
             </Text>
           </View>
-          <TouchableOpacity
-            onPress={() => alertRun(30)}
-            style={styles.userAlert}>
-            <SvgFromXml
-              fill={Theme.colors.danger}
-              width="30"
-              height="30"
-              xml={Icons.siren}
-            />
-            <Text style={styles.alerText}>Uyarı</Text>
-          </TouchableOpacity>
+          {user?.notifications?.length > 0 ? (
+            <TouchableOpacity
+              onPress={() => alertRun(30)}
+              style={styles.userAlert}>
+              <SvgFromXml
+                fill={Theme.colors.danger}
+                width="30"
+                height="30"
+                xml={Icons.siren}
+              />
+              <Text style={styles.alerText}>Uyarı</Text>
+            </TouchableOpacity>
+          ) : null}
         </View>
         <View style={styles.circleWrapper}>
-          <View style={styles.circleBorder}>
-            <View style={styles.circle}>
-              <TouchableOpacity
-                activeOpacity={0.8}
-                onPress={() => runSiren()}
-                style={styles.circleInside}>
-                <SvgFromXml
-                  fill={Theme.colors.white}
-                  width="50%"
-                  height="100"
-                  xml={Icons.siren}
-                />
-                <Text style={styles.circleText}>Alarm Ver</Text>
-              </TouchableOpacity>
-            </View>
+          <Animated.View style={borderStyles}>
+            <Text></Text>
+          </Animated.View>
+          <View style={styles.circle}>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              onPress={() => runSiren()}
+              style={styles.circleInside}>
+              <SvgFromXml
+                fill={Theme.colors.white}
+                width="50%"
+                height="100"
+                xml={Icons.siren}
+              />
+              <Text style={styles.circleText}>Alarm Ver</Text>
+            </TouchableOpacity>
           </View>
         </View>
         <View style={styles.textArea}>
@@ -135,13 +371,13 @@ const InActiveAlarm = ({setIsAlarm, changeBg}) => {
             vermek için Panik butonuna uzun basın
           </Text>
         </View>
-        <Modalize
-          style={{backgroundColor: 'white'}}
-          modalTopOffset={5}
-          ref={modalizeRef}>
-          <LiveLocation modalizeRef={modalizeRef} />
-        </Modalize>
       </View>
+      <Modalize
+        style={{backgroundColor: 'white', zIndex: 9}}
+        modalTopOffset={5}
+        ref={modalizeRef}>
+        <LiveLocation modalizeRef={modalizeRef} />
+      </Modalize>
     </>
   );
 };
@@ -153,7 +389,6 @@ const styles = StyleSheet.create({
     top: 30,
     left: 0,
     margin: 25,
-    backgroundColor: '#ffe5ea',
     zIndex: 1,
     padding: 15,
     borderRadius: 10,
@@ -165,11 +400,25 @@ const styles = StyleSheet.create({
     },
     elevation: 4,
   },
+  alertDangerType: {
+    backgroundColor: '#ffe5ea',
+  },
+  alertInfoType: {
+    backgroundColor: Theme.colors.white,
+  },
   alertTop: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
     marginBottom: 25,
+  },
+  alertInfo: {
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  avatar: {
+    flex: 0.3,
   },
   alertTitle: {
     flexDirection: 'row',
@@ -197,14 +446,17 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 100,
   },
+  alertMessage: {},
   infoArea: {
+    flex: 1,
     flexDirection: 'row',
-    alignItems: 'center',
+    flexWrap: 'wrap',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
   },
   userName: {
     flexDirection: 'row',
-    alignItems: 'center',
-    marginLeft: 15,
+    marginBottom: 5,
   },
   userNameText: {
     fontSize: Theme.sizes.base,
@@ -213,6 +465,13 @@ const styles = StyleSheet.create({
   },
   action: {
     marginTop: 25,
+  },
+  actionPermission: {
+    marginTop: 25,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   actionButton: {
     backgroundColor: Theme.colors.danger,
@@ -247,28 +506,20 @@ const styles = StyleSheet.create({
     color: Theme.colors.danger,
   },
   circleWrapper: {
+    position: 'relative',
+    zIndex: -1,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
   circleBorder: {
-    width: width - 50,
-    height: width - 50,
     borderWidth: 2,
     borderColor: '#f7d684',
     borderRadius: 500,
     alignItems: 'center',
     justifyContent: 'center',
     alignContent: 'center',
-  },
-  circle: {
-    width: width - 125,
-    height: width - 125,
-    borderWidth: 2,
-    borderColor: '#f7d684',
-    borderRadius: 200,
-    alignItems: 'center',
-    justifyContent: 'center',
+    position: 'absolute',
   },
   circleInside: {
     width: width - 175,
