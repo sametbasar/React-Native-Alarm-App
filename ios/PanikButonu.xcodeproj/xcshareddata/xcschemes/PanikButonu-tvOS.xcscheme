@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "PronetMobileApp-tvOS.app"
-               BlueprintName = "PronetMobileApp-tvOS"
-               ReferencedContainer = "container:PronetMobileApp.xcodeproj">
+               BuildableName = "PanikButonu-tvOS.app"
+               BlueprintName = "PanikButonu-tvOS"
+               ReferencedContainer = "container:PanikButonu.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "PronetMobileApp-tvOSTests.xctest"
-               BlueprintName = "PronetMobileApp-tvOSTests"
-               ReferencedContainer = "container:PronetMobileApp.xcodeproj">
+               BuildableName = "PanikButonu-tvOSTests.xctest"
+               BlueprintName = "PanikButonu-tvOSTests"
+               ReferencedContainer = "container:PanikButonu.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "PronetMobileApp-tvOS.app"
-            BlueprintName = "PronetMobileApp-tvOS"
-            ReferencedContainer = "container:PronetMobileApp.xcodeproj">
+            BuildableName = "PanikButonu-tvOS.app"
+            BlueprintName = "PanikButonu-tvOS"
+            ReferencedContainer = "container:PanikButonu.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "PronetMobileApp-tvOS.app"
-            BlueprintName = "PronetMobileApp-tvOS"
-            ReferencedContainer = "container:PronetMobileApp.xcodeproj">
+            BuildableName = "PanikButonu-tvOS.app"
+            BlueprintName = "PanikButonu-tvOS"
+            ReferencedContainer = "container:PanikButonu.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

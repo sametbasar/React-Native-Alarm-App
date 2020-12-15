@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* PronetMobileAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PronetMobileAppTests.m */; };
-		0E01162D4FE6FA40172AAE1E /* libPods-PronetMobileApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECE4384AB0204DF4D1BF3313 /* libPods-PronetMobileApp.a */; };
+		00E356F31AD99517003FC87E /* PanikButonuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PanikButonuTests.m */; };
+		0E01162D4FE6FA40172AAE1E /* libPods-PanikButonu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECE4384AB0204DF4D1BF3313 /* libPods-PanikButonu.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -17,11 +17,11 @@
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2DCD954D1E0B4F2C00145EB5 /* PronetMobileAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PronetMobileAppTests.m */; };
+		2DCD954D1E0B4F2C00145EB5 /* PanikButonuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PanikButonuTests.m */; };
 		3CD68CDFD2444162A945E08E /* SFUIText-RegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34D5582B4B324A2A9A5B1710 /* SFUIText-RegularItalic.ttf */; };
-		4365A6EF9900D91E57E5A920 /* libPods-PronetMobileApp-PronetMobileAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C07DC83E93C0E7886C37AFB4 /* libPods-PronetMobileApp-PronetMobileAppTests.a */; };
+		4365A6EF9900D91E57E5A920 /* libPods-PanikButonu-PanikButonuTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C07DC83E93C0E7886C37AFB4 /* libPods-PanikButonu-PanikButonuTests.a */; };
 		55EC2D8CD7F843AF85AC92ED /* SFUIText-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E5540F605DB442B69D938BC6 /* SFUIText-LightItalic.ttf */; };
-		61868B817989430C14D5FF08 /* libPods-PronetMobileApp-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9338AB2B669B6F5AF62B6F /* libPods-PronetMobileApp-tvOS.a */; };
+		61868B817989430C14D5FF08 /* libPods-PanikButonu-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9338AB2B669B6F5AF62B6F /* libPods-PanikButonu-tvOS.a */; };
 		66F902D0F35B4CF88C3636FC /* SFUIText-HeavyItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22A8AB359EAC4DDBA9499F31 /* SFUIText-HeavyItalic.ttf */; };
 		7926BCB37B8B4523B8C04171 /* SFUIText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68390DB5B120450FBDB106C4 /* SFUIText-Bold.ttf */; };
 		7E8232F2A55146D29B13B992 /* SFUIText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E29640467B9346F295E0ECC9 /* SFUIText-Regular.ttf */; };
@@ -31,7 +31,7 @@
 		E3BB5CE4F4AB4C8481BD33F5 /* SFUIText-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0E879EC26C84F98AFC9567E /* SFUIText-BoldItalic.ttf */; };
 		F09FFAF8434C46EF94736B0E /* SFUIText-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 470CD467F06649BFAA140331 /* SFUIText-Semibold.ttf */; };
 		F2302E8B65164CEF98E598D4 /* SFUIText-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE221943779F45BC915BA05F /* SFUIText-Heavy.ttf */; };
-		F430B1342E24476EC45568DA /* libPods-PronetMobileApp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE01C4BA7B578F0116C6B7F2 /* libPods-PronetMobileApp-tvOSTests.a */; };
+		F430B1342E24476EC45568DA /* libPods-PanikButonu-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE01C4BA7B578F0116C6B7F2 /* libPods-PanikButonu-tvOSTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,57 +40,57 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = PronetMobileApp;
+			remoteInfo = PanikButonu;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
-			remoteInfo = "PronetMobileApp-tvOS";
+			remoteInfo = "PanikButonu-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* PronetMobileAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PronetMobileAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* PanikButonuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PanikButonuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* PronetMobileAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PronetMobileAppTests.m; sourceTree = "<group>"; };
-		0BCF0D27E49A28C2FB44A1B3 /* Pods-PronetMobileApp-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PronetMobileApp-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-PronetMobileApp-tvOS/Pods-PronetMobileApp-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		0F9338AB2B669B6F5AF62B6F /* libPods-PronetMobileApp-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PronetMobileApp-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07F961A680F5B00A75B9A /* PronetMobileApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PronetMobileApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = PronetMobileApp/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = PronetMobileApp/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = PronetMobileApp/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PronetMobileApp/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = PronetMobileApp/main.m; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* PanikButonuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PanikButonuTests.m; sourceTree = "<group>"; };
+		0BCF0D27E49A28C2FB44A1B3 /* Pods-PanikButonu-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PanikButonu-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-PanikButonu-tvOS/Pods-PanikButonu-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		0F9338AB2B669B6F5AF62B6F /* libPods-PanikButonu-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PanikButonu-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* PanikButonu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanikButonu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = PanikButonu/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = PanikButonu/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = PanikButonu/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PanikButonu/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = PanikButonu/main.m; sourceTree = "<group>"; };
 		22A8AB359EAC4DDBA9499F31 /* SFUIText-HeavyItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIText-HeavyItalic.ttf"; path = "../assets/fonts/SFUIText-HeavyItalic.ttf"; sourceTree = "<group>"; };
-		2D02E47B1E0B4A5D006451C7 /* PronetMobileApp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PronetMobileApp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* PronetMobileApp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PronetMobileApp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2DABAB0B8A0FA9C318A9B675 /* Pods-PronetMobileApp-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PronetMobileApp-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-PronetMobileApp-tvOSTests/Pods-PronetMobileApp-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		2E62673137F8CFA9E61F0EB9 /* Pods-PronetMobileApp-PronetMobileAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PronetMobileApp-PronetMobileAppTests.debug.xcconfig"; path = "Target Support Files/Pods-PronetMobileApp-PronetMobileAppTests/Pods-PronetMobileApp-PronetMobileAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		33B0D910C64BCB1991FB7135 /* Pods-PronetMobileApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PronetMobileApp.debug.xcconfig"; path = "Target Support Files/Pods-PronetMobileApp/Pods-PronetMobileApp.debug.xcconfig"; sourceTree = "<group>"; };
+		2D02E47B1E0B4A5D006451C7 /* PanikButonu-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PanikButonu-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* PanikButonu-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PanikButonu-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DABAB0B8A0FA9C318A9B675 /* Pods-PanikButonu-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PanikButonu-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-PanikButonu-tvOSTests/Pods-PanikButonu-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2E62673137F8CFA9E61F0EB9 /* Pods-PanikButonu-PanikButonuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PanikButonu-PanikButonuTests.debug.xcconfig"; path = "Target Support Files/Pods-PanikButonu-PanikButonuTests/Pods-PanikButonu-PanikButonuTests.debug.xcconfig"; sourceTree = "<group>"; };
+		33B0D910C64BCB1991FB7135 /* Pods-PanikButonu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PanikButonu.debug.xcconfig"; path = "Target Support Files/Pods-PanikButonu/Pods-PanikButonu.debug.xcconfig"; sourceTree = "<group>"; };
 		34D5582B4B324A2A9A5B1710 /* SFUIText-RegularItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIText-RegularItalic.ttf"; path = "../assets/fonts/SFUIText-RegularItalic.ttf"; sourceTree = "<group>"; };
 		470CD467F06649BFAA140331 /* SFUIText-Semibold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIText-Semibold.ttf"; path = "../assets/fonts/SFUIText-Semibold.ttf"; sourceTree = "<group>"; };
 		68390DB5B120450FBDB106C4 /* SFUIText-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIText-Bold.ttf"; path = "../assets/fonts/SFUIText-Bold.ttf"; sourceTree = "<group>"; };
-		7E40F91A9A10F05862185348 /* Pods-PronetMobileApp-PronetMobileAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PronetMobileApp-PronetMobileAppTests.release.xcconfig"; path = "Target Support Files/Pods-PronetMobileApp-PronetMobileAppTests/Pods-PronetMobileApp-PronetMobileAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = PronetMobileApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7E40F91A9A10F05862185348 /* Pods-PanikButonu-PanikButonuTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PanikButonu-PanikButonuTests.release.xcconfig"; path = "Target Support Files/Pods-PanikButonu-PanikButonuTests/Pods-PanikButonu-PanikButonuTests.release.xcconfig"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = PanikButonu/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		898EC163935641F8910C4AC1 /* SFUIText-SemiboldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIText-SemiboldItalic.ttf"; path = "../assets/fonts/SFUIText-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		8B94E3309E99410D80F14CB4 /* SFUIText-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIText-Medium.ttf"; path = "../assets/fonts/SFUIText-Medium.ttf"; sourceTree = "<group>"; };
-		8E05E848DE735C24FF3D4CB6 /* Pods-PronetMobileApp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PronetMobileApp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-PronetMobileApp-tvOSTests/Pods-PronetMobileApp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		8E8BA2A8F6674239240A67F5 /* Pods-PronetMobileApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PronetMobileApp.release.xcconfig"; path = "Target Support Files/Pods-PronetMobileApp/Pods-PronetMobileApp.release.xcconfig"; sourceTree = "<group>"; };
+		8E05E848DE735C24FF3D4CB6 /* Pods-PanikButonu-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PanikButonu-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-PanikButonu-tvOSTests/Pods-PanikButonu-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		8E8BA2A8F6674239240A67F5 /* Pods-PanikButonu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PanikButonu.release.xcconfig"; path = "Target Support Files/Pods-PanikButonu/Pods-PanikButonu.release.xcconfig"; sourceTree = "<group>"; };
 		99B0EDB0E87F48679D62F872 /* SFUIText-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIText-Light.ttf"; path = "../assets/fonts/SFUIText-Light.ttf"; sourceTree = "<group>"; };
-		BE01C4BA7B578F0116C6B7F2 /* libPods-PronetMobileApp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PronetMobileApp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C07DC83E93C0E7886C37AFB4 /* libPods-PronetMobileApp-PronetMobileAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PronetMobileApp-PronetMobileAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE01C4BA7B578F0116C6B7F2 /* libPods-PanikButonu-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PanikButonu-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C07DC83E93C0E7886C37AFB4 /* libPods-PanikButonu-PanikButonuTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PanikButonu-PanikButonuTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E879EC26C84F98AFC9567E /* SFUIText-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIText-BoldItalic.ttf"; path = "../assets/fonts/SFUIText-BoldItalic.ttf"; sourceTree = "<group>"; };
 		C1EFBF4DADEF4A92BD1FD147 /* SFUIText-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIText-MediumItalic.ttf"; path = "../assets/fonts/SFUIText-MediumItalic.ttf"; sourceTree = "<group>"; };
 		DE221943779F45BC915BA05F /* SFUIText-Heavy.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIText-Heavy.ttf"; path = "../assets/fonts/SFUIText-Heavy.ttf"; sourceTree = "<group>"; };
 		E29640467B9346F295E0ECC9 /* SFUIText-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIText-Regular.ttf"; path = "../assets/fonts/SFUIText-Regular.ttf"; sourceTree = "<group>"; };
 		E5540F605DB442B69D938BC6 /* SFUIText-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIText-LightItalic.ttf"; path = "../assets/fonts/SFUIText-LightItalic.ttf"; sourceTree = "<group>"; };
-		ECE4384AB0204DF4D1BF3313 /* libPods-PronetMobileApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PronetMobileApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECE4384AB0204DF4D1BF3313 /* libPods-PanikButonu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PanikButonu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		F2B0ED46ED3A03C21808702B /* Pods-PronetMobileApp-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PronetMobileApp-tvOS.release.xcconfig"; path = "Target Support Files/Pods-PronetMobileApp-tvOS/Pods-PronetMobileApp-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		F2B0ED46ED3A03C21808702B /* Pods-PanikButonu-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PanikButonu-tvOS.release.xcconfig"; path = "Target Support Files/Pods-PanikButonu-tvOS/Pods-PanikButonu-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4365A6EF9900D91E57E5A920 /* libPods-PronetMobileApp-PronetMobileAppTests.a in Frameworks */,
+				4365A6EF9900D91E57E5A920 /* libPods-PanikButonu-PanikButonuTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E01162D4FE6FA40172AAE1E /* libPods-PronetMobileApp.a in Frameworks */,
+				0E01162D4FE6FA40172AAE1E /* libPods-PanikButonu.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,7 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61868B817989430C14D5FF08 /* libPods-PronetMobileApp-tvOS.a in Frameworks */,
+				61868B817989430C14D5FF08 /* libPods-PanikButonu-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,20 +122,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F430B1342E24476EC45568DA /* libPods-PronetMobileApp-tvOSTests.a in Frameworks */,
+				F430B1342E24476EC45568DA /* libPods-PanikButonu-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* PronetMobileAppTests */ = {
+		00E356EF1AD99517003FC87E /* PanikButonuTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* PronetMobileAppTests.m */,
+				00E356F21AD99517003FC87E /* PanikButonuTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = PronetMobileAppTests;
+			path = PanikButonuTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -166,7 +166,7 @@
 			path = "";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* PronetMobileApp */ = {
+		13B07FAE1A68108700A75B9A /* PanikButonu */ = {
 			isa = PBXGroup;
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -177,7 +177,7 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = PronetMobileApp;
+			name = PanikButonu;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -185,10 +185,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				ECE4384AB0204DF4D1BF3313 /* libPods-PronetMobileApp.a */,
-				C07DC83E93C0E7886C37AFB4 /* libPods-PronetMobileApp-PronetMobileAppTests.a */,
-				0F9338AB2B669B6F5AF62B6F /* libPods-PronetMobileApp-tvOS.a */,
-				BE01C4BA7B578F0116C6B7F2 /* libPods-PronetMobileApp-tvOSTests.a */,
+				ECE4384AB0204DF4D1BF3313 /* libPods-PanikButonu.a */,
+				C07DC83E93C0E7886C37AFB4 /* libPods-PanikButonu-PanikButonuTests.a */,
+				0F9338AB2B669B6F5AF62B6F /* libPods-PanikButonu-tvOS.a */,
+				BE01C4BA7B578F0116C6B7F2 /* libPods-PanikButonu-tvOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -203,9 +203,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* PronetMobileApp */,
+				13B07FAE1A68108700A75B9A /* PanikButonu */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* PronetMobileAppTests */,
+				00E356EF1AD99517003FC87E /* PanikButonuTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				C810F53665DF1844D95CA2BF /* Pods */,
@@ -219,10 +219,10 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* PronetMobileApp.app */,
-				00E356EE1AD99517003FC87E /* PronetMobileAppTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* PronetMobileApp-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* PronetMobileApp-tvOSTests.xctest */,
+				13B07F961A680F5B00A75B9A /* PanikButonu.app */,
+				00E356EE1AD99517003FC87E /* PanikButonuTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* PanikButonu-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* PanikButonu-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -230,14 +230,14 @@
 		C810F53665DF1844D95CA2BF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				33B0D910C64BCB1991FB7135 /* Pods-PronetMobileApp.debug.xcconfig */,
-				8E8BA2A8F6674239240A67F5 /* Pods-PronetMobileApp.release.xcconfig */,
-				2E62673137F8CFA9E61F0EB9 /* Pods-PronetMobileApp-PronetMobileAppTests.debug.xcconfig */,
-				7E40F91A9A10F05862185348 /* Pods-PronetMobileApp-PronetMobileAppTests.release.xcconfig */,
-				0BCF0D27E49A28C2FB44A1B3 /* Pods-PronetMobileApp-tvOS.debug.xcconfig */,
-				F2B0ED46ED3A03C21808702B /* Pods-PronetMobileApp-tvOS.release.xcconfig */,
-				2DABAB0B8A0FA9C318A9B675 /* Pods-PronetMobileApp-tvOSTests.debug.xcconfig */,
-				8E05E848DE735C24FF3D4CB6 /* Pods-PronetMobileApp-tvOSTests.release.xcconfig */,
+				33B0D910C64BCB1991FB7135 /* Pods-PanikButonu.debug.xcconfig */,
+				8E8BA2A8F6674239240A67F5 /* Pods-PanikButonu.release.xcconfig */,
+				2E62673137F8CFA9E61F0EB9 /* Pods-PanikButonu-PanikButonuTests.debug.xcconfig */,
+				7E40F91A9A10F05862185348 /* Pods-PanikButonu-PanikButonuTests.release.xcconfig */,
+				0BCF0D27E49A28C2FB44A1B3 /* Pods-PanikButonu-tvOS.debug.xcconfig */,
+				F2B0ED46ED3A03C21808702B /* Pods-PanikButonu-tvOS.release.xcconfig */,
+				2DABAB0B8A0FA9C318A9B675 /* Pods-PanikButonu-tvOSTests.debug.xcconfig */,
+				8E05E848DE735C24FF3D4CB6 /* Pods-PanikButonu-tvOSTests.release.xcconfig */,
 			);
 			name = Pods;
 			path = Pods;
@@ -246,9 +246,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* PronetMobileAppTests */ = {
+		00E356ED1AD99517003FC87E /* PanikButonuTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "PronetMobileAppTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "PanikButonuTests" */;
 			buildPhases = (
 				D8F77B3FE62E396431202A95 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -261,14 +261,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = PronetMobileAppTests;
-			productName = PronetMobileAppTests;
-			productReference = 00E356EE1AD99517003FC87E /* PronetMobileAppTests.xctest */;
+			name = PanikButonuTests;
+			productName = PanikButonuTests;
+			productReference = 00E356EE1AD99517003FC87E /* PanikButonuTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* PronetMobileApp */ = {
+		13B07F861A680F5B00A75B9A /* PanikButonu */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "PronetMobileApp" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "PanikButonu" */;
 			buildPhases = (
 				1C9A75FAB36DF3B0D6B4B442 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -282,14 +282,14 @@
 			);
 			dependencies = (
 			);
-			name = PronetMobileApp;
-			productName = PronetMobileApp;
-			productReference = 13B07F961A680F5B00A75B9A /* PronetMobileApp.app */;
+			name = PanikButonu;
+			productName = PanikButonu;
+			productReference = 13B07F961A680F5B00A75B9A /* PanikButonu.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* PronetMobileApp-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* PanikButonu-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "PronetMobileApp-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "PanikButonu-tvOS" */;
 			buildPhases = (
 				3D23CC1238C05FC3144A2F4E /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
@@ -302,14 +302,14 @@
 			);
 			dependencies = (
 			);
-			name = "PronetMobileApp-tvOS";
-			productName = "PronetMobileApp-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* PronetMobileApp-tvOS.app */;
+			name = "PanikButonu-tvOS";
+			productName = "PanikButonu-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* PanikButonu-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* PronetMobileApp-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* PanikButonu-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "PronetMobileApp-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "PanikButonu-tvOSTests" */;
 			buildPhases = (
 				DA9969EACE6C71BABCA4D7F1 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
@@ -321,9 +321,9 @@
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 			);
-			name = "PronetMobileApp-tvOSTests";
-			productName = "PronetMobileApp-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* PronetMobileApp-tvOSTests.xctest */;
+			name = "PanikButonu-tvOSTests";
+			productName = "PanikButonu-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* PanikButonu-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -352,7 +352,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "PronetMobileApp" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "PanikButonu" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -365,10 +365,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* PronetMobileApp */,
-				00E356ED1AD99517003FC87E /* PronetMobileAppTests */,
-				2D02E47A1E0B4A5D006451C7 /* PronetMobileApp-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* PronetMobileApp-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* PanikButonu */,
+				00E356ED1AD99517003FC87E /* PanikButonuTests */,
+				2D02E47A1E0B4A5D006451C7 /* PanikButonu-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* PanikButonu-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -449,7 +449,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PronetMobileApp-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-PanikButonu-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -485,7 +485,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PronetMobileApp-tvOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-PanikButonu-tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -498,7 +498,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PronetMobileApp-PronetMobileAppTests/Pods-PronetMobileApp-PronetMobileAppTests-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-PanikButonu-PanikButonuTests/Pods-PanikButonu-PanikButonuTests-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
@@ -509,7 +509,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PronetMobileApp-PronetMobileAppTests/Pods-PronetMobileApp-PronetMobileAppTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PanikButonu-PanikButonuTests/Pods-PanikButonu-PanikButonuTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AC0E1E796CB55169539AC98E /* [CP] Copy Pods Resources */ = {
@@ -518,7 +518,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PronetMobileApp/Pods-PronetMobileApp-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-PanikButonu/Pods-PanikButonu-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
@@ -529,7 +529,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PronetMobileApp/Pods-PronetMobileApp-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PanikButonu/Pods-PanikButonu-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D8F77B3FE62E396431202A95 /* [CP] Check Pods Manifest.lock */ = {
@@ -547,7 +547,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PronetMobileApp-PronetMobileAppTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-PanikButonu-PanikButonuTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -569,7 +569,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PronetMobileApp-tvOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-PanikButonu-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -621,7 +621,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* PronetMobileAppTests.m in Sources */,
+				00E356F31AD99517003FC87E /* PanikButonuTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,7 +647,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCD954D1E0B4F2C00145EB5 /* PronetMobileAppTests.m in Sources */,
+				2DCD954D1E0B4F2C00145EB5 /* PanikButonuTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,12 +656,12 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* PronetMobileApp */;
+			target = 13B07F861A680F5B00A75B9A /* PanikButonu */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* PronetMobileApp-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* PanikButonu-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -669,14 +669,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E62673137F8CFA9E61F0EB9 /* Pods-PronetMobileApp-PronetMobileAppTests.debug.xcconfig */;
+			baseConfigurationReference = 2E62673137F8CFA9E61F0EB9 /* Pods-PanikButonu-PanikButonuTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = PronetMobileAppTests/Info.plist;
+				INFOPLIST_FILE = PanikButonuTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -686,17 +686,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PronetMobileApp.app/PronetMobileApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PanikButonu.app/PanikButonu";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E40F91A9A10F05862185348 /* Pods-PronetMobileApp-PronetMobileAppTests.release.xcconfig */;
+			baseConfigurationReference = 7E40F91A9A10F05862185348 /* Pods-PanikButonu-PanikButonuTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = PronetMobileAppTests/Info.plist;
+				INFOPLIST_FILE = PanikButonuTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -706,19 +706,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PronetMobileApp.app/PronetMobileApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PanikButonu.app/PanikButonu";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 33B0D910C64BCB1991FB7135 /* Pods-PronetMobileApp.debug.xcconfig */;
+			baseConfigurationReference = 33B0D910C64BCB1991FB7135 /* Pods-PanikButonu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = PronetMobileApp/Info.plist;
+				INFOPLIST_FILE = PanikButonu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -726,7 +726,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = PronetMobileApp;
+				PRODUCT_NAME = PanikButonu;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -735,12 +735,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8E8BA2A8F6674239240A67F5 /* Pods-PronetMobileApp.release.xcconfig */;
+			baseConfigurationReference = 8E8BA2A8F6674239240A67F5 /* Pods-PanikButonu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = PronetMobileApp/Info.plist;
+				INFOPLIST_FILE = PanikButonu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -748,7 +748,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = PronetMobileApp;
+				PRODUCT_NAME = PanikButonu;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -756,7 +756,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0BCF0D27E49A28C2FB44A1B3 /* Pods-PronetMobileApp-tvOS.debug.xcconfig */;
+			baseConfigurationReference = 0BCF0D27E49A28C2FB44A1B3 /* Pods-PanikButonu-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -767,14 +767,14 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "PronetMobileApp-tvOS/Info.plist";
+				INFOPLIST_FILE = "PanikButonu-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.PronetMobileApp-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.PanikButonu-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -784,7 +784,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F2B0ED46ED3A03C21808702B /* Pods-PronetMobileApp-tvOS.release.xcconfig */;
+			baseConfigurationReference = F2B0ED46ED3A03C21808702B /* Pods-PanikButonu-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -795,14 +795,14 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "PronetMobileApp-tvOS/Info.plist";
+				INFOPLIST_FILE = "PanikButonu-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.PronetMobileApp-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.PanikButonu-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -812,7 +812,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2DABAB0B8A0FA9C318A9B675 /* Pods-PronetMobileApp-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 2DABAB0B8A0FA9C318A9B675 /* Pods-PanikButonu-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -822,24 +822,24 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "PronetMobileApp-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "PanikButonu-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.PronetMobileApp-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.PanikButonu-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PronetMobileApp-tvOS.app/PronetMobileApp-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PanikButonu-tvOS.app/PanikButonu-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8E05E848DE735C24FF3D4CB6 /* Pods-PronetMobileApp-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 8E05E848DE735C24FF3D4CB6 /* Pods-PanikButonu-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -849,17 +849,17 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "PronetMobileApp-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "PanikButonu-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.PronetMobileApp-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.PanikButonu-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PronetMobileApp-tvOS.app/PronetMobileApp-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PanikButonu-tvOS.app/PanikButonu-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -980,7 +980,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "PronetMobileAppTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "PanikButonuTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -989,7 +989,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "PronetMobileApp" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "PanikButonu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -998,7 +998,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "PronetMobileApp-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "PanikButonu-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -1007,7 +1007,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "PronetMobileApp-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "PanikButonu-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -1016,7 +1016,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "PronetMobileApp" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "PanikButonu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

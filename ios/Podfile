@@ -3,7 +3,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '10.0'
 
-target 'PronetMobileApp' do
+target 'PanikButonu' do
 
   # … 
  
@@ -27,7 +27,7 @@ target 'PronetMobileApp' do
   use_react_native!(:path => config["reactNativePath"])
 
 
-  target 'PronetMobileAppTests' do
+  target 'PanikButonuTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -42,10 +42,10 @@ target 'PronetMobileApp' do
   end
 end
 
-target 'PronetMobileApp-tvOS' do
-  # Pods for PronetMobileApp-tvOS
+target 'PanikButonu-tvOS' do
+  # Pods for PanikButonu-tvOS
 
-  target 'PronetMobileApp-tvOSTests' do
+  target 'PanikButonu-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end   
